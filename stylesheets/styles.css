@@ -1,0 +1,15 @@
+.header {
+  background-color: #ff5455;
+  width: 200px;
+  height: 100px; }
+
+.logo {
+  background-image: url("../assets/codeup-logo-main.png");
+  width: 200px;
+  height: 100px;
+  background-size: 200%; }
+
+.show {
+  background-color: white; }
+
+/*# sourceMappingURL=styles.css.map */
