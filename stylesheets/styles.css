@@ -48,10 +48,15 @@
   height: 300px; }
 
 .animated-bubble {
-  background-color: gray;
-  font-family: myFont;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e6e6e6;
   font-size: 30px;
-  border-radius: 20px;
-  width: 40vw;
+  border-radius: 40px;
+  min-width: 575px;
   max-width: 700px;
-  height: 60px; }
+  height: 65px; }
+
+.bubble-text {
+  font-family: myFont; }
