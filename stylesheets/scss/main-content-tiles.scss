@@ -70,6 +70,38 @@
   background: #ea4435;
 }
 
+.tile-2b {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+}
+
+.subjects {
+  background-image: url(../assets/subjects.png);
+  width: 300px;
+  height: 350px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  margin-top: 160px;
+}
+
+.tile-3a {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+}
+
+.practice {
+  background-image: url(../assets/practice.png);
+  width: 300px;
+  height: 350px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  margin-top: 75px;
+}
+
 .tile-3b {
   display: flex;
   flex-direction: column;
@@ -84,4 +116,20 @@
   align-items: center;
   justify-content: center;
   background: #34a851;
+}
+
+.tile-4b {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+}
+
+.demo {
+  background-image: url(../assets/demo.png);
+  width: 300px;
+  height: 350px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  margin-top: 30px;
 }
