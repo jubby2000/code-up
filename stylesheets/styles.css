@@ -8,6 +8,7 @@
   height: 80px;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
@@ -22,7 +23,10 @@
   background-size: 80%;
   background-repeat: no-repeat;
   min-width: 280px;
-  margin-left: 50px; }
+  padding-left: 10px;
+  position: relative;
+  left: 20px;
+}
 
 .nav-links {
   display: flex;
