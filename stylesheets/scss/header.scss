@@ -51,29 +51,38 @@
 
 // @font-face {
 //    font-family: 'myFont';
-//    src: url(../../assets/fonts/ProductSansRegular.ttf);
+//    src: url('../../assets/fonts/ProductSansRegular.ttf') format('truetype');
 // }
 
+// @import "mixins";
+// @include font-face(myFont, '../../assets/fonts/ProductSansRegular.ttf');
 
+@import "fonts";
 
 .header {
   background-color: #ff5455;
   width: 100vw;
-  height: 100px;
+  height: 80px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 20px;
+  
+-webkit-box-shadow: 0px 4px 18px 1px rgba(186,186,186,1);
+-moz-box-shadow: 0px 4px 18px 1px rgba(186,186,186,1);
+box-shadow: 0px 4px 18px 1px rgba(186,186,186,1);
 }
 
 .logo {
   background-image: url('../assets/codeup-logo-main.png');
   width: 280px;
-  height: 60px;
-  background-size: 100%;
+  height: 45px;
+  background-size: 80%;
   background-repeat: no-repeat;
   // background-color: blue;
   min-width: 280px;
+  margin-left: 50px;
 }
 
 .nav-links {
@@ -87,8 +96,16 @@
   
   a {
     padding: 20px;
-    font-family: 'myFont';
-    font-size: 18px;
+    font-family: myFont;
+    font-size: 16px;
     color: white;
+    transition: 0.3s;
+
+  }
+
+  a:hover {  
+    color: white;
+    text-shadow: 0px 0px 5px white;
+    transition: 0.3s;
   }
 }
