@@ -37,13 +37,15 @@ body {
 
 .slogan {
   font-family: myFont;
+  font-size: 17px;
   padding: 20px;
 }
 
 .collab-logo {
   background-image: url('../assets/collab-logo.png');
-  height: 150px;
+  height: 100px;
   width: 200px;
   background-size: 100%;
   background-repeat: no-repeat;
+  margin-top: 20px;
 }
