@@ -1,3 +1,8 @@
+@font-face {
+    font-family: codeupsans;
+    src: url(../../assets/fonts/CodeUp-Regular.ttf);
+}
+
 .header {
   background-color: #ff5455;
   width: 100vw;
@@ -24,7 +29,12 @@
   justify-content: space-between;
   text-transform: uppercase;
   min-width: 200px;
+  margin-right: 50px;
+  
   a {
+    padding: 20px;
+    font-family: 'codeupsans';
+    font-size: 18px;
     color: white;
   }
 }
