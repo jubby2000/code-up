@@ -14,7 +14,7 @@
 }
 
 .all-tiles > div {
-  border: 1px solid blue;
+  border: 1px solid red;
   width: 400px;
   height: 400px;
 }
@@ -37,8 +37,21 @@
   color: white;
 }
 .tile-1a {
-
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
 }
+
+.just-ask-google {
+  background-image: url(../assets/just-ask-google.png);
+  width: 300px;
+  height: 350px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  margin-top: 30px;
+}
+
 
 .tile-1b {
   display: flex;
