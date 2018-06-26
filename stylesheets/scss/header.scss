@@ -1,13 +1,111 @@
+// @font-face {
+//     font-family: cr;
+//     src: url('../../assets/fonts/CircularStd-Book.otf') format("embedded-opentype");
+// }
+
+// @include font-face(GoogleSans-Regular, )
+// @mixin font($font-family, $font-file) {
+//   @font-face {
+//     font-family: $font-family;
+//     src: url($font-file+'.ttf') format('truetype');
+//     font-weight: normal;
+//     font-style: normal;
+//   }
+// }
+
+
+// @include font('codeupsans', '../../assets/fonts/GoogleSans-Regular');
+
+// @font-face {
+//   font-family: codeupsans;
+//   src: url('../../assets/fonts/ProductSansRegular.ttf') format('truetype');
+// }
+
+
+// @mixin fontFace($family,$src,$style: normal,$weight: normal) {
+// 	@font-face {
+// 		font-family: $family;
+// 		src: url('#{$src}.eot'); // IE9 compat
+// 		src: url('#{$src}.eot?#iefix') format('embedded-opentype'), // IE8 and below
+// 			url('#{$src}.woff') format('woff'), // standards
+// 			url('#{$src}.ttf') format('truetype'), // Safari, Android, iOS
+// 			url('#{$src}.svg##{$family}') format('svg'); // legacy iOS
+
+// 		font-style: $style;
+// 		font-weight: $weight;
+// 	}
+// }
+
+// @import 'fontFace';
+
+// @import fontFace('codeupsans','../../assets/fonts/CircularStd-Book.otf');
+
+// @import "mixins";
+
+
+
+
+// @include font('Arvo', '../../assets/fonts/CircularStd-Book');
+// @include font('Arvo-Bold', '/htdocs/lib/fonts/Arvo-Bold');
+
+
+// @font-face {
+//    font-family: 'myFont';
+//    src: url('../../assets/fonts/ProductSansRegular.ttf') format('truetype');
+// }
+
+// @import "mixins";
+// @include font-face(myFont, '../../assets/fonts/ProductSansRegular.ttf');
+
+@import "fonts";
+
 .header {
   background-color: #ff5455;
-  width: 200px;
-  height: 200px;
+  width: 100vw;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  
+-webkit-box-shadow: 0px 4px 18px 1px rgba(186,186,186,1);
+-moz-box-shadow: 0px 4px 18px 1px rgba(186,186,186,1);
+box-shadow: 0px 4px 18px 1px rgba(186,186,186,1);
 }
 
 .logo {
   background-image: url('../assets/codeup-logo-main.png');
-  width: 250px;
-  height: 100px;
-  background-size: 200%;
+  width: 280px;
+  height: 45px;
+  background-size: 80%;
   background-repeat: no-repeat;
+  // background-color: blue;
+  min-width: 280px;
+  margin-left: 50px;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-transform: uppercase;
+  min-width: 200px;
+  margin-right: 50px;
+  // font-family: 'codeupsans';
+  
+  a {
+    padding: 20px;
+    font-family: myFont;
+    font-size: 16px;
+    color: white;
+    transition: 0.3s;
+
+  }
+
+  a:hover {  
+    color: white;
+    text-shadow: 0px 0px 5px white;
+    transition: 0.3s;
+  }
 }
