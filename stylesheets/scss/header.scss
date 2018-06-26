@@ -60,7 +60,7 @@
 @import "fonts";
 
 .header {
-  background-color: #ff5455;
+  background-color: #3a85f4;
   width: 100vw;
   height: 80px;
   display: flex;
@@ -68,7 +68,7 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
-  
+
 -webkit-box-shadow: 0px 4px 18px 1px rgba(186,186,186,1);
 -moz-box-shadow: 0px 4px 18px 1px rgba(186,186,186,1);
 box-shadow: 0px 4px 18px 1px rgba(186,186,186,1);
@@ -93,7 +93,7 @@ box-shadow: 0px 4px 18px 1px rgba(186,186,186,1);
   min-width: 200px;
   margin-right: 50px;
   // font-family: 'codeupsans';
-  
+
   a {
     padding: 20px;
     font-family: myFont;
@@ -103,7 +103,7 @@ box-shadow: 0px 4px 18px 1px rgba(186,186,186,1);
 
   }
 
-  a:hover {  
+  a:hover {
     color: white;
     text-shadow: 0px 0px 5px white;
     transition: 0.3s;
