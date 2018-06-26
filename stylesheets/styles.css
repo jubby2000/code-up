@@ -56,7 +56,7 @@ body {
   background-color: white;
   width: 90vw;
   height: 300px;
-  border: 1px solid lightgray;
+  border: 1px solid red;
   border-radius: 5px;
   padding-top: 20px; }
 
@@ -76,11 +76,13 @@ body {
 
 .slogan {
   font-family: myFont;
+  font-size: 17px;
   padding: 20px; }
 
 .collab-logo {
   background-image: url("../assets/collab-logo.png");
-  height: 150px;
+  height: 100px;
   width: 200px;
   background-size: 100%;
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+  margin-top: 20px; }
