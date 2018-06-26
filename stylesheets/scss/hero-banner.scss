@@ -1,0 +1,22 @@
+.hero-banner {
+  background-color: lightblue;
+  width: 100vw;
+  height: 300px;
+}
+
+.animated-bubble {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e6e6e6;
+  font-size: 30px;
+  border-radius: 40px;
+  // width: 40vw;
+  min-width: 575px;
+  max-width: 700px;
+  height: 65px;
+}
+
+.bubble-text {
+  font-family: myFont;
+}
