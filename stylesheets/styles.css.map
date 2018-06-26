@@ -1,7 +1,1 @@
-{
-"version": 3,
-"mappings": "AAAA,OAAQ;EACN,gBAAgB,EAAE,OAAO;EACzB,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,KAAK;;AAGf,KAAM;EACJ,gBAAgB,EAAE,qCAAqC;EACvD,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,KAAK;EACb,eAAe,EAAE,IAAI;EACrB,iBAAiB,EAAE,SAAS",
-"sources": ["scss/header.scss"],
-"names": [],
-"file": "styles.css"
-}
+{"version":3,"sourceRoot":"","sources":["scss/header.scss"],"names":[],"mappings":"AAAA;EACE;EACA;EACA;;;AAGF;EACE;EACA;EACA;EACA;EACA","file":"styles.css"}
