@@ -8,7 +8,6 @@
   height: 80px;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
@@ -23,10 +22,7 @@
   background-size: 80%;
   background-repeat: no-repeat;
   min-width: 280px;
-  padding-left: 10px;
-  position: relative;
-  left: 20px;
-}
+  margin-left: 50px; }
 
 .nav-links {
   display: flex;
@@ -45,3 +41,17 @@
     color: white;
     text-shadow: 0px 0px 5px white;
     transition: 0.3s; }
+
+.hero-banner {
+  background-color: lightblue;
+  width: 100vw;
+  height: 300px; }
+
+.animated-bubble {
+  background-color: gray;
+  font-family: myFont;
+  font-size: 30px;
+  border-radius: 20px;
+  width: 40vw;
+  max-width: 700px;
+  height: 60px; }
