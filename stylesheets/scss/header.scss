@@ -1,13 +1,30 @@
 .header {
   background-color: #ff5455;
-  width: 200px;
-  height: 200px;
+  width: 100vw;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
   background-image: url('../assets/codeup-logo-main.png');
-  width: 250px;
-  height: 100px;
-  background-size: 200%;
+  width: 280px;
+  height: 60px;
+  background-size: 100%;
   background-repeat: no-repeat;
+  background-color: blue;
+  min-width: 280px;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-transform: uppercase;
+  min-width: 200px;
+  a {
+    color: white;
+  }
 }
