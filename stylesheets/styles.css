@@ -86,3 +86,20 @@ body {
   background-size: 100%;
   background-repeat: no-repeat;
   margin-top: 20px; }
+
+.main-content-tiles {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 90vw; }
+
+.all-tiles {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 850px; }
+
+.all-tiles > div {
+  border: 1px solid blue;
+  width: 400px;
+  height: 400px; }
