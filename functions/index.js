@@ -32,19 +32,17 @@ const functions = require('firebase-functions');
 
 // Instantiate the Dialogflow client.
 const app = dialogflow({ debug: true });
-console.log("line 35 =============================");
 // Handle the Dialogflow intent named 'Default Welcome Intent'.
 app.intent('Default Welcome Intent', (conv) => {
-  console.log("line 38 =======================================");
   conv.ask(new Permission({
     context: 'Hi there, to get to know you better',
     permissions: 'NAME',
   }));
 });
+
 // Handle the Dialogflow intent named 'actions_intent_PERMISSION'. If user
 // agreed to PERMISSION prompt, then boolean value 'permissionGranted' is true.
 app.intent('actions_intent_PERMISSION', (conv, params, permissionGranted) => {
-  console.log("line 47 ==================================");
   if (!permissionGranted) {
     conv.ask(`Ok, no worries. What programming language would you like to learn?`);
   } else {
@@ -59,14 +57,14 @@ app.intent('programming language', (conv, { programmingLanguage }) => {
   const luckyNumber = programmingLanguage.length;
   const audioSound = 'https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg';
   if (conv.data.userName) {
-    conv.ask(`<speak>${programmingLanguage}, got it.` +
-      ` ${conv.data.userName}, your lucky number is ` +
-      `${luckyNumber}.<audio src="${audioSound}"></audio>` +
+    conv.ask(`<speak>${programmingLanguage}, got it. ` +
+      // ` ${conv.data.userName}, your lucky number is ` +
+      // `${luckyNumber}.<audio src="${audioSound}"></audio>` +
       `How many questions would you like?</speak>`);
   } else {
-    conv.ask(`<speak>Your lucky number is ${luckyNumber}.` +
-      `<audio src="${audioSound}"></audio>` +
-      `How many questions would you like?</speak>`);
+    conv.ask(
+      // `<audio src="${audioSound}"></audio>` +
+      `<speak>How many questions would you like?</speak>`);
   }
 });
 
@@ -86,15 +84,15 @@ app.intent('programming language - select.number', (conv, { language, number }) 
   rootRef.child('Questions').orderByChild('Tags').limitToFirst(1).on('value', snap => {
     question_set = snap.val().Question;
   });
-  conv.ask(
+  conv.close(
     `Got it, ${language} and ${number} questions. Let's do it.` +
     `${question_set}`
   );
 });
 
-app.intent('programming language - select.number', (conv, { language, number }) => {
-  conv.close(`Got it, ${language} and ${number} questions. Let's do it.`);
-});
+// app.intent('programming language - select.number', (conv, { language, number }) => {
+//   conv.close(`Got it, ${language} and ${number} questions. Let's do it.`);
+// });
 
 
 // Set the DialogflowApp object to handle the HTTPS POST request.
