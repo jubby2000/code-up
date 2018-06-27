@@ -1,7 +1,21 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .hero-banner {
-  background-color: lightblue;
-  width: 100vw;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  width: 90vw;
   height: 300px;
+  border: 1px solid red;
+  border-radius: 5px;
+  padding-top: 20px;
 }
 
 .animated-bubble {
@@ -19,4 +33,19 @@
 
 .bubble-text {
   font-family: myFont;
+}
+
+.slogan {
+  font-family: myFont;
+  font-size: 17px;
+  padding: 20px;
+}
+
+.collab-logo {
+  background-image: url('../assets/collab-logo.png');
+  height: 100px;
+  width: 200px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  margin-top: 20px;
 }
