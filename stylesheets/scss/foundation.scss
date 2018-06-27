@@ -8,4 +8,15 @@ body {
     // background: red;
     background-image: url('../assets/backslant-features-repeat.png');
     background-size: 100%;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+}
+
+#load {
+  -webkit-animation: fadein 0.5s;
+}
+
+@keyframes fadein {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
