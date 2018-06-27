@@ -3,8 +3,13 @@
   flex-direction: row;
   justify-content: center;
   width: 90vw;
-  border: 1px solid red;
-
+  // border: 1px solid red;
+  background: white;
+  border-radius: 7px;
+  margin: 7px 0 7px 0;
+      -webkit-box-shadow: 0px 0px 14px 0px rgba(135,135,135,1);
+-moz-box-shadow: 0px 0px 14px 0px rgba(135,135,135,1);
+box-shadow: 0px 0px 14px 0px rgba(135,135,135,1);
 }
 
 .all-tiles {

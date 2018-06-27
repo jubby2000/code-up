@@ -1,12 +1,18 @@
 .footer {
     width: 90vw;
-    border: 1px solid red;
+    // border: 1px solid red;
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-radius: 7px;
 
+    margin-top: 7px;
+    margin-bottom: 20px;
     // height: 100px;
-    // background: goldenrod;
+    background: white;
+-webkit-box-shadow: 0px 0px 14px 0px rgba(135,135,135,1);
+-moz-box-shadow: 0px 0px 14px 0px rgba(135,135,135,1);
+box-shadow: 0px 0px 14px 0px rgba(135,135,135,1);
 }
 
 .all-people {

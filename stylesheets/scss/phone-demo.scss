@@ -1,11 +1,15 @@
 .phone-demo-card {
     width: 90vw;
-    border: 1px solid red;
+    // border: 1px solid red;
+    border-radius: 7px;
     padding: 30px 0 30px 0;
     display: flex;
     justify-content: center;
     // height: 300px;
-    // background: blueviolet;
+    background: white;
+     -webkit-box-shadow: 0px 0px 14px 0px rgba(135,135,135,1);
+-moz-box-shadow: 0px 0px 14px 0px rgba(135,135,135,1);
+box-shadow: 0px 0px 14px 0px rgba(135,135,135,1);
 }
 
 .phone-container {
