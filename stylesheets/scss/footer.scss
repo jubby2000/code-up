@@ -1,6 +1,76 @@
 .footer {
     width: 90vw;
     border: 1px solid red;
-    height: 100px;
-    background: goldenrod;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    // height: 100px;
+    // background: goldenrod;
+}
+
+.all-people {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.about-us {
+    text-transform: uppercase;
+    font-family: myFont;
+    font-weight: bold;
+    font-size: 26px;
+    padding: 30px;
+}
+
+.person {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 30px;
+
+
+    .person-name {
+        font-size: 24px;
+        font-family: myFont;
+    }
+
+    .person-image {
+        background: green;
+        border-radius: 50%;
+        height: 150px;
+        width: 150px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        -webkit-box-shadow: 0px 13px 71px -5px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 13px 71px -5px rgba(0,0,0,0.75);
+box-shadow: 0px 13px 71px -5px rgba(0,0,0,0.75);
+    }
+}
+
+.person-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    // background: red;
+
+}
+
+.github {
+    background-image: url('../assets/github-logo.png');
+    width: 60px;
+    height: 60px;
+    background-size: 100%;
+    margin: 10px;
+}
+
+.linkedin {
+    background-image: url('../assets/linkedin-logo.png');
+    width: 60px;
+    height: 60px;
+    background-size: 100%;
+    margin: 10px;
 }
