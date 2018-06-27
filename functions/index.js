@@ -68,27 +68,18 @@ app.intent('programming language', (conv, { programmingLanguage }) => {
   }
 });
 
-// const colorMap = {
-//   'indigo taco': new BasicCard({
-//     title: 'Indigo Taco',
-//     image: {
-//       url: 'https://storage.googleapis.com/material-design/publish/material_v_12/assets/0BxFyKV4eeNjDN1JRbF9ZMHZsa1k/style-color-uiapplication-palette1.png',
-//       accessibilityText: 'Indigo Taco Color',
-//     },
-//     display: 'WHITE',
-//   })
-// };
-
 app.intent('programming language - select.number', (conv, { language, number }) => {
-  let question_set;
-  rootRef.child('Questions').orderByChild('Tags').limitToFirst(1).on('value', snap => {
-    question_set = snap.val().Question;
-  });
-  conv.close(
-    `Got it, ${language} and ${number} questions. Let's do it.` +
-    `${question_set}`
-  );
+  return getQuestions.then(snapshot => {
+    let question_set = snapshot.val()[0].Question;
+    console.log(snapshot)
+    return conv.ask(
+      `Got it, ${language} and ${number} questions. Let's do it. ` +
+      `${question_set}`
+    )
+  })
 });
+
+const getQuestions = rootRef.child('Questions').orderByChild('Tags').limitToFirst(1).once('value');
 
 // app.intent('programming language - select.number', (conv, { language, number }) => {
 //   conv.close(`Got it, ${language} and ${number} questions. Let's do it.`);
