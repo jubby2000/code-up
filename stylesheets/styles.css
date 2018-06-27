@@ -97,12 +97,13 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 850px; }
+  width: 810px;
+  background: #ea4435; }
 
 .all-tiles > div {
   border: 1px solid red;
-  width: 400px;
-  height: 400px; }
+  width: 403px;
+  height: 403px; }
 
 .tile-title {
   font-family: myFont;
@@ -203,3 +204,17 @@ body {
   background-size: 100%;
   background-repeat: no-repeat;
   margin-top: 30px; }
+
+.phone-demo-card {
+  width: 90vw;
+  border: 1px solid red;
+  padding: 30px;
+  display: flex;
+  justify-content: center; }
+
+.phone {
+  background-image: url("../assets/phone.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 300px;
+  height: 610px; }

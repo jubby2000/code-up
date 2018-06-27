@@ -1,0 +1,18 @@
+.phone-demo-card {
+    width: 90vw;
+    border: 1px solid red;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    // height: 300px;
+    // background: blueviolet;
+}
+
+.phone {
+    background-image: url('../assets/phone.png');
+    background-repeat: no-repeat;
+
+    background-size: 100%;
+    width: 300px;
+    height: 610px;
+}

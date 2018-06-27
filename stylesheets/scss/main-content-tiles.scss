@@ -10,13 +10,14 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 850px;
+  width: 810px;
+  background: #ea4435;
 }
 
 .all-tiles > div {
   border: 1px solid red;
-  width: 400px;
-  height: 400px;
+  width: 403px;
+  height: 403px;
 }
 
 
