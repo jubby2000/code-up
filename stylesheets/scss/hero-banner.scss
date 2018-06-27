@@ -2,7 +2,11 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  // overflow-y: scroll;
+  scroll-behavior: smooth;
 }
+
+
 
 .hero-banner {
   margin-top: 20px;
@@ -13,9 +17,15 @@ body {
   background-color: white;
   width: 90vw;
   height: 300px;
-  border: 1px solid red;
-  border-radius: 5px;
+  // border: 1px solid red;
+  border-radius: 7px;
   padding-top: 20px;
+    margin: 20px 0 0px 0;
+
+  -webkit-box-shadow: 0px 0px 14px 0px rgba(135,135,135,1);
+-moz-box-shadow: 0px 0px 14px 0px rgba(135,135,135,1);
+box-shadow: 0px 0px 14px 0px rgba(135,135,135,1);
+
 }
 
 .animated-bubble {
