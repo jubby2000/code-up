@@ -1,3 +1,13 @@
 @import "header";
 @import "hero-banner";
 @import "main-content-tiles";
+@import "phone-demo";
+@import "footer";
+
+body {
+    // background: red;
+    background-image: url('../assets/backslant-features-repeat.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+}

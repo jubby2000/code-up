@@ -2,21 +2,28 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  width: 90vw;
-
+  width: 75vw;
+  // border: 1px solid red;
+  background: white;
+  border-radius: 7px;
+  margin: 30px 0 30px 0;
+      -webkit-box-shadow: 0px 0px 14px 0px rgba(135,135,135,1);
+-moz-box-shadow: 0px 0px 14px 0px rgba(135,135,135,1);
+box-shadow: 0px 0px 14px 0px rgba(135,135,135,1);
 }
 
 .all-tiles {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 850px;
+  width: 810px;
+  // background: #ea4435;
 }
 
 .all-tiles > div {
-  border: 1px solid red;
-  width: 400px;
-  height: 400px;
+  // border: 1px solid lightgray;
+  width: 403px;
+  height: 403px;
 }
 
 
@@ -127,9 +134,63 @@
 
 .demo {
   background-image: url(../assets/demo.png);
-  width: 300px;
+  width: 200px;
   height: 350px;
-  background-size: 100%;
+  background-size: 80%;
   background-repeat: no-repeat;
   margin-top: 30px;
+  // background: #ea4435
+  align-self: center;
+}
+
+
+.demo-button-round {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  // height: 100px;
+  // width: 100px;
+  // background: #34a851;
+  // border-radius: 100px;
+  // background: red;
+  // margin-top: 50px;
+}
+
+.demo-button {
+  color: white;
+  font-family: myFont;
+  background: #34a851;
+  height: 40px;
+  width: 40px;
+  padding: 42px 30px 42px 30px;
+  // margin-top: 100px;
+  border-radius: 50%;
+  // background: red;
+  -webkit-box-shadow: 0px 13px 59px -12px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 13px 59px -12px rgba(0,0,0,0.75);
+box-shadow: 0px 13px 59px -12px rgba(0,0,0,0.75);
+    transition: 0.3s;
+
+}
+
+.demo-button:hover {
+color: white;
+    text-shadow: 0px 0px 5px white;
+  -webkit-box-shadow: 0px 13px 71px -5px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 13px 71px -5px rgba(0,0,0,0.75);
+box-shadow: 0px 13px 71px -5px rgba(0,0,0,0.75);
+    transition: 0.3s;
+
+}
+
+.demo-button:active {
+color: white;
+    // text-shadow: 0px 0px 3px white;
+  -webkit-box-shadow: 0px 13px 67px -20px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 13px 67px -20px rgba(0,0,0,0.75);
+box-shadow: 0px 13px 67px -20px rgba(0,0,0,0.75);
+    transition: 0.3s;
+
 }
