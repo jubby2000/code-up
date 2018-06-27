@@ -1,5 +1,25 @@
 'use strict';
 
+// Import Firebase-admin and initialize app.
+const admin = require('firebase-admin');
+
+// Initialize Firebase
+// TODO: Replace with your project's customized code snippet
+const config = {
+  apiKey: "AIzaSyD7t2UELyolG2mRLVk1XvYoJi30TffOo8A",
+  authDomain: "code-up-927cb.firebaseapp.com",
+  databaseURL: "https://code-up-927cb.firebaseio.com/"
+};
+
+admin.initializeApp(config);
+
+// Reference database.
+const rootRef = admin.database().ref();
+// const question_set = rootRef.child('Questions')
+//                             .orderByChild('Tags')
+//                             .limitToFirst(1).on('value', snap => {
+//                               console.log('value', snap.val());
+//                             });
 // Import the Dialogflow module from the Actions on Google client library.
 const {
   dialogflow,
@@ -12,7 +32,6 @@ const functions = require('firebase-functions');
 
 // Instantiate the Dialogflow client.
 const app = dialogflow({ debug: true });
-
 // Handle the Dialogflow intent named 'Default Welcome Intent'.
 app.intent('Default Welcome Intent', (conv) => {
   conv.ask(new Permission({
@@ -38,14 +57,14 @@ app.intent('programming language', (conv, { programmingLanguage }) => {
   const luckyNumber = programmingLanguage.length;
   const audioSound = 'https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg';
   if (conv.data.userName) {
-    conv.ask(`<speak>${programmingLanguage}, got it.` +
-      ` ${conv.data.userName}, your lucky number is ` +
-      `${luckyNumber}.<audio src="${audioSound}"></audio>` +
+    conv.ask(`<speak>${programmingLanguage}, got it. ` +
+      // ` ${conv.data.userName}, your lucky number is ` +
+      // `${luckyNumber}.<audio src="${audioSound}"></audio>` +
       `How many questions would you like?</speak>`);
   } else {
-    conv.ask(`<speak>Your lucky number is ${luckyNumber}.` +
-      `<audio src="${audioSound}"></audio>` +
-      `How many questions would you like?</speak>`);
+    conv.ask(
+      // `<audio src="${audioSound}"></audio>` +
+      `<speak>How many questions would you like?</speak>`);
   }
 });
 
@@ -61,8 +80,19 @@ app.intent('programming language', (conv, { programmingLanguage }) => {
 // };
 
 app.intent('programming language - select.number', (conv, { language, number }) => {
-  conv.close(`Got it, ${language} and ${number} questions. Let's do it.`);
+  let question_set;
+  rootRef.child('Questions').orderByChild('Tags').limitToFirst(1).on('value', snap => {
+    question_set = snap.val().Question;
+  });
+  conv.close(
+    `Got it, ${language} and ${number} questions. Let's do it.` +
+    `${question_set}`
+  );
 });
+
+// app.intent('programming language - select.number', (conv, { language, number }) => {
+//   conv.close(`Got it, ${language} and ${number} questions. Let's do it.`);
+// });
 
 
 // Set the DialogflowApp object to handle the HTTPS POST request.
