@@ -4,7 +4,7 @@
             "question": "Which company created JavaScript?",
             "correctAnswer": "Oracle",
             "tags": [
-                "Ruby"
+                "Javascript"
             ],
             "wrongAnswer": [
                 "Netscape",
@@ -15,7 +15,7 @@
             "question": "How many days did it take Brendan Eich to create JavaScript?",
             "correctAnswer": "10 days",
             "tags": [
-                "Ruby"
+                "Javascript"
             ],
             "wrongAnswer": [
                 "He wasn't the creator",
@@ -26,7 +26,7 @@
             "question": "What was JavaScript originally called?",
             "correctAnswer": "Mocha",
             "tags": [
-                "Ruby"
+                "Javascript"
             ],
             "wrongAnswer": [
                 "Frappucino",
@@ -37,7 +37,7 @@
             "question": "True or False? JavaScript is dynamically typed.",
             "correctAnswer": "True",
             "tags": [
-                "Ruby"
+                "Javascript"
             ],
             "wrongAnswer": [
                 "False"
@@ -47,7 +47,7 @@
             "question": "True or False? Null is an object.",
             "correctAnswer": "True",
             "tags": [
-                "Ruby"
+                "Javascript"
             ],
             "wrongAnswer": [
                 "False",
@@ -58,7 +58,7 @@
             "question": "5 divided by 0 is equal to which of the following?",
             "correctAnswer": "Infinity",
             "tags": [
-                "Ruby"
+                "Javascript"
             ],
             "wrongAnswer": [
                 "Undefined",
@@ -69,7 +69,7 @@
             "question": "Which of the following is a JavaScript event?",
             "correctAnswer": "onUnload",
             "tags": [
-                "Ruby"
+                "Javascript"
             ],
             "wrongAnswer": [
                 "onJump",
@@ -80,7 +80,7 @@
             "question": "JavaScript is a subset of Java",
             "correctAnswer": "Hell no!",
             "tags": [
-                "Ruby"
+                "Javascript"
             ],
             "wrongAnswer": [
                 "Hell yes!"
@@ -90,7 +90,7 @@
             "question": "True or False? Global variables are not created automatically in Strict Mode.",
             "correctAnswer": "True",
             "tags": [
-                "Ruby"
+                "Javascript"
             ],
             "wrongAnswer": [
                 "False",
@@ -101,7 +101,7 @@
             "question": "True or False? Global variables are not created automatically in Strict Mode.",
             "correctAnswer": "True",
             "tags": [
-                "Ruby"
+                "Javascript"
             ],
             "wrongAnswer": [
                 "False",
@@ -112,7 +112,7 @@
             "question": "Can we equate two arrays in JavaScript?",
             "correctAnswer": "Yes",
             "tags": [
-                "Ruby"
+                "Javascript"
             ],
             "wrongAnswer": [
                 "No"
@@ -122,7 +122,7 @@
             "question": "True or False? JavaScript is weird.",
             "correctAnswer": "True",
             "tags": [
-                "Ruby"
+                "Javascript"
             ],
             "wrongAnswer": []
         }
