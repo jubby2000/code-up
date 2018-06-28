@@ -79,8 +79,11 @@ app.intent('programming language - select.number', (conv, { language, number }) 
   })
 });
 
-const getQuestions = rootRef.child('Questions').orderByChild('Tags').limitToFirst(1).once('value');
 
+
+
+
+const getQuestions = rootRef.child('Questions').orderByChild('Tags').limitToFirst(1).once('value');
 // app.intent('programming language - select.number', (conv, { language, number }) => {
 //   conv.close(`Got it, ${language} and ${number} questions. Let's do it.`);
 // });
