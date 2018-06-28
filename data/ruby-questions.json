@@ -1,0 +1,99 @@
+{
+  "questions": [
+    {
+      "question": "What is the highest level in the object model?",
+      "correctAnswer": "BasicObject",
+      "tags": ["Ruby"]
+    },
+    {
+      "question": "Which core object includes the Kernel module?",
+      "correctAnswer": "Object",
+      "tags": ["Ruby"]
+    },
+    {
+      "question": "Does String include the Enumerable module?",
+      "correctAnswer": "No",
+      "tags": ["Ruby"]
+    },
+    {
+      "question": "What happens when a value becomes too big for Fixnum?",
+      "correctAnswer": "It is automatically converted to a Bignum.",
+      "tags": ["Ruby"]
+    },
+    {
+      "question": "In what order are the values of a hash iterated?",
+      "correctAnswer": "The order in which they were inserted.",
+      "tags": ["Ruby"]
+    },
+    {
+      "question": "What are two uses of ranges?",
+      "correctAnswer": "comparison, iteration",
+      "tags": ["Ruby"]
+    },
+    {
+      "question": "What are two uses of the splat operator?",
+      "correctAnswer": "Explode or expand the elements of an array. Collect arguments of a parameter list into an array.",
+      "tags": ["Ruby"]
+    },
+    {
+      "question": "Does a while block define a new scope?",
+      "correctAnswer": "No.",
+      "tags": ["Ruby"]
+    },
+    {
+      "question": "Does the case statement in Ruby have fall-through behavior?",
+      "correctAnswer": "No.",
+      "tags": ["Ruby"]
+    },
+    {
+      "question": "What is the meaning of self?",
+      "correctAnswer": "The current object.",
+      "tags": ["Ruby"]
+    },
+    {
+      "question": "What does a bang (or exclamation point) at the end of a method signify?",
+      "correctAnswer": "That it should be with caution. Methods with this naming convention typically perform a mutation on the receiver object.",
+      "tags": ["Ruby"]
+    },
+    {
+      "question": "When might you explicitly use the return statement.",
+      "correctAnswer": "To return from a method prematurely.",
+      "tags": ["Ruby"]
+    },
+    {
+      "question": "What is a singleton method?",
+      "correctAnswer": "A method that is available only on a single object.",
+      "tags": ["Ruby"]
+    },
+    {
+      "question": "What is a factory method?",
+      "correctAnswer": "An initialization method that creates specialized instances of a class.",
+      "tags": ["Ruby"]
+    },
+    {
+      "question": "What is an IO object?",
+      "correctAnswer": "An IO object is an instance of class IO that can be used for reading or writing binary data to and from a file.",
+      "tags": ["Ruby"]
+    },
+    {
+      "question": "If more than one version of a Gem is installed, which version will be used?",
+      "correctAnswer": "The Gem with the highest version number.",
+      "tags": ["Ruby"]
+    },
+    {
+      "question": "What error is raised if a method is passed the wrong number of arguments?",
+      "correctAnswer": "ArgumentError",
+      "tags": ["Ruby"]
+    },
+    {
+      "question": "What error is raised if method name resolution fails?",
+      "correctAnswer": "NoMethodError",
+      "tags": ["Ruby"]
+    },
+    {
+      "question": "What is the difference between \"puts\" and \"print\"?",
+      "correctAnswer": "puts\" appends a newline character to the output.",
+      "tags": ["Ruby"]
+    }
+  ]
+}
