@@ -1,0 +1,182 @@
+{
+  "questions": [
+    {
+      "question": "What does CSS stand for?",
+      "correctAnswer": "Cascading Style Sheets",
+      "wrongAnswer":[
+        "Common Style Selectors",
+        "Creative Style Sheets"
+      ],
+      "tags": ["CSS"]
+    },
+    {
+      "question": "Which property is used to change the background color?",
+      "correctAnswer": "background-color",
+      "wrongAnswer":[
+        "background-style",
+        "apply-color"
+      ],
+      "tags": ["CSS"]
+    },
+    {
+      "question": "Which CSS property is used to change the text color of an element?",
+      "correctAnswer": "color",
+      "wrongAnswer":[
+        "text-color",
+        "change-color"
+      ],
+      "tags": ["CSS"]
+    },
+    {
+      "question": "Which CSS property controls the text size?",
+      "correctAnswer": "font-size",
+      "wrongAnswer":[
+        "change-size",
+        "text-size"
+      ],
+      "tags": ["CSS"]
+    },
+    {
+      "question": "Which property is used to change the font of an element?",
+      "correctAnswer": "font-family",
+      "wrongAnswer":[
+        "font-style",
+        "apply-font"
+      ],
+      "tags": ["CSS"]
+    },
+    {
+      "question": "Which property is responsible for bolding a text element?",
+      "correctAnswer": "font-weight",
+      "wrongAnswer":[
+        "text-boldness",
+        "text-adjust"
+      ],
+      "tags": ["CSS"]
+    },
+    {
+      "question": "Which property is used to adjust the outer spacing of an element?",
+      "correctAnswer": "margin",
+      "wrongAnswer":[
+        "padding",
+        "border"
+      ],
+      "tags": ["CSS"]
+    },
+    {
+      "question": "When using the padding property, are you allowed to use negative values?",
+      "correctAnswer": "No",
+      "wrongAnswer":[
+        "Yes"
+      ],
+      "tags": ["CSS"]
+    },
+    {
+      "question": "Which of the following CSS properties do not exist?",
+      "correctAnswer": "text-opacity",
+      "wrongAnswer":[
+        "position",
+        "box-sizing"
+      ],
+      "tags": ["CSS"]
+    },
+    {
+      "question": "True or false: monospace is a generic font family",
+      "correctAnswer": "True",
+      "wrongAnswer":[
+        "False"
+      ],
+      "tags": ["CSS"]
+    },
+    {
+      "question": "Which of the following a valid supported color name?",
+      "correctAnswer": "Aquamarine",
+      "wrongAnswer":[
+        "Coffee",
+        "Tangerine"
+      ],
+      "tags": ["CSS"]
+    },
+    {
+      "question": "Which property would you use to remove or add underlines?",
+      "correctAnswer": "text-decoration",
+      "wrongAnswer":[
+        "underline-status",
+        "text-underline"
+      ],
+      "tags": ["CSS"]
+    },
+    {
+      "question": "Which of the following is an not a valid position value?",
+      "correctAnswer": "temporary",
+      "wrongAnswer":[
+        "static",
+        "sticky"
+      ],
+      "tags": ["CSS"]
+    },
+    {
+      "question": "Which display property is used to hide elements?",
+      "correctAnswer": "none",
+      "wrongAnswer":[
+        "contents",
+        "minimize"
+      ],
+      "tags": ["CSS"]
+    },
+    {
+      "question": "Which selector is used to select all immediate elements below an element?",
+      "correctAnswer": "child selector",
+      "wrongAnswer":[
+        "all-below",
+        "next"
+      ],
+      "tags": ["CSS"]
+    },
+    {
+      "question": "Which of the following is an example of a pseudo-class?",
+      "correctAnswer": "hover",
+      "wrongAnswer":[
+        "body",
+        "footer"
+      ],
+      "tags": ["CSS"]
+    },
+    {
+      "question": "Which property would you use to adjust capitalization for text?",
+      "correctAnswer": "text-transform",
+      "wrongAnswer":[
+        "capitalize",
+        "text-case"
+      ],
+      "tags": ["CSS"]
+    },
+    {
+      "question": "What would happen if the opacity of an element was set to 0?",
+      "correctAnswer": "the element would not be displayed on screen",
+      "wrongAnswer":[
+        "the element would be deleted",
+        "nothing"
+      ],
+      "tags": ["CSS"]
+    },
+    {
+      "question": "Which of the following lengths units are not valid in CSS?",
+      "correctAnswer": "meter",
+      "wrongAnswer":[
+        "millimeter",
+        "pica"
+      ],
+      "tags": ["CSS"]
+    },
+    {
+      "question": "Which property would you use to round the corners of an element??",
+      "correct_answer": "border-radius",
+      "wrongAnswer":[
+        "roundness",
+        "element-smooth"
+      ],
+      "tags": ["CSS"]
+    },
+  ]
+}
