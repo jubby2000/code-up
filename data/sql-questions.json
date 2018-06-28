@@ -1,0 +1,219 @@
+{
+  "questions": [
+    {
+        "question": "Which company developed SQL?",
+        "correctAnswer": "IBM",
+        "tags": [
+            "SQL"
+        ],
+        "wrongAnswer": [
+            "Oracle",
+            "Microsoft"
+        ]
+    },
+    {
+        "question": "True or False? A Primary Key is required for a table.",
+        "correctAnswer": "False",
+        "tags": [
+            "SQL"
+        ],
+        "wrongAnswer": [
+            "True"
+        ]
+    },
+    {
+        "question": "Which SQL statement is used to extract data from a database?",
+        "correctAnswer": "SELECT",
+        "tags": [
+            "SQL"
+        ],
+        "wrongAnswer": [
+            "GET",
+            "EXTRACT"
+        ]
+    },
+    {
+        "question": "Which of the following is not a SQL statement?",
+        "correctAnswer": "DESTROY TABLE",
+        "tags": [
+            "SQL"
+        ],
+        "wrongAnswer": [
+            "DELETE",
+            "DROP TABLE"
+        ]
+    },
+    {
+        "question": "The S in SQL stands for which of the following?",
+        "correctAnswer": "Structured",
+        "tags": [
+            "SQL"
+        ],
+        "wrongAnswer": [
+            "Standardized",
+            "Sequential"
+        ]
+    },
+    {
+        "question": "What does the underscore represent in a LIKE statement?",
+        "correctAnswer": "Single Character",
+        "tags": [
+            "SQL"
+        ],
+        "wrongAnswer": [
+            "Wildcard Character",
+            "Lowercase Character"
+        ]
+    },
+    {
+        "question": "True or False? The ORDER BY statement is executed before the GROUP BY statement.",
+        "correctAnswer": "False",
+        "tags": [
+            "SQL"
+        ],
+        "wrongAnswer": [
+            "True"
+        ]
+    },
+    {
+        "question": "The JOIN statement defaults to which of the following?",
+        "correctAnswer": "INNER JOIN",
+        "tags": [
+            "SQL"
+        ],
+        "wrongAnswer": [
+            "LEFT JOIN",
+            "FULL JOIN"
+        ]
+    },
+    {
+        "question": "Which SQL statement is used to create an alias?",
+        "correctAnswer": "AS",
+        "tags": [
+            "SQL"
+        ],
+        "wrongAnswer": [
+            "ALIAS",
+            "CREATE"
+        ]
+    },
+    {
+        "question": "An alias cannot be made for which of the following?",
+        "correctAnswer": "Database",
+        "tags": [
+            "SQL"
+        ],
+        "wrongAnswer": [
+            "Table",
+            "Column"
+        ]
+    },
+    {
+        "question": "Which of the following is not a SQL function?",
+        "correctAnswer": "MID",
+        "tags": [
+            "SQL"
+        ],
+        "wrongAnswer": [
+            "MIN",
+            "MAX"
+        ]
+    },
+    {
+        "question": "Is it true that SQL can only be used for relational databases?",
+        "correctAnswer": "Yes",
+        "tags": [
+            "SQL"
+        ],
+        "wrongAnswer": [
+            "No"
+        ]
+    },
+    {
+        "question": "Which of the following is a SQL operator?",
+        "correctAnswer": "NOT",
+        "tags": [
+            "SQL"
+        ],
+        "wrongAnswer": [
+            "NOR",
+            "NIL"
+        ]
+    },
+    {
+        "question": "True or False? UNION ALL is a SQL operator.",
+        "correctAnswer": "True",
+        "tags": [
+            "SQL"
+        ],
+        "wrongAnswer": [
+            "False"
+        ]
+    },
+    {
+        "question": "The EXISTS operator checks for which of the following?",
+        "correctAnswer": "Existence of a record in a subquery",
+        "tags": [
+            "SQL"
+        ],
+        "wrongAnswer": [
+            "Existence of a database given a parameter"
+        ]
+    },
+    {
+        "question": "Which of the following is not a SQL function?",
+        "correctAnswer": "NOTNULL",
+        "tags": [
+            "SQL"
+        ],
+        "wrongAnswer": [
+            "ISNULL",
+            "IFNULL"
+        ]
+    },
+    {
+        "question": "Which SQL statement is used to return only different values?",
+        "correctAnswer": "SELECT DISTINCT",
+        "tags": [
+            "SQL"
+        ],
+        "wrongAnswer": [
+            "SELECT UNIQUE",
+            "SELECT DIFFERENT"
+        ]
+    },
+    {
+        "question": "Which SQL keyword is used to sort the result?",
+        "correctAnswer": "ORDER BY",
+        "tags": [
+            "SQL"
+        ],
+        "wrongAnswer": [
+            "SORT BY",
+            "SORT"
+        ]
+    },
+    {
+        "question": "Which is not a DDL statement?",
+        "correctAnswer": "Delete",
+        "tags": [
+            "SQL"
+        ],
+        "wrongAnswer": [
+            "Truncate",
+            "Alter"
+        ]
+    },
+    {
+        "question": "Which operator is used to select values within a range?",
+        "correctAnswer": "BETWEEN",
+        "tags": [
+            "SQL"
+        ],
+        "wrongAnswer": [
+            "WITHIN",
+            "RANGE"
+        ]
+    } 
+  ]
+}
