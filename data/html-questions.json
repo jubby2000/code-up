@@ -1,0 +1,180 @@
+{
+  "questions": [
+    {
+      "question": "What does HTML stand for?",
+      "correctAnswer": "Hypertext Markup Language",
+      "wrongAnswer":[
+        "Hotmail ",
+        "How To Make Language"
+      ],
+      "tags": ["HTML"]
+    },
+    {
+      "question": "True or false: all HTML documents must start with a document type declaration",
+      "correctAnswer": "True",
+      "wrongAnswer":[
+        "False"
+      ],
+      "tags": ["HTML"]
+    },
+    {
+      "question": "What is the 'p' tag used for?",
+      "correctAnswer": "creating a paragraph",
+      "wrongAnswer":[
+        "creating a partition",
+        "creating a new page"
+      ],
+      "tags": ["HTML"]
+    },
+    {
+      "question": "What type of tag is used to define an HTML link?",
+      "correctAnswer": "anchor tag",
+      "wrongAnswer":[
+        "link tag",
+        "url tag"
+      ],
+      "tags": ["HTML"]
+    },
+    {
+      "question": "Which of the following is not an attribute of an image tag?",
+      "correctAnswer": "image-border",
+      "wrongAnswer":[
+        "alternative text",
+        "source file"
+      ],
+      "tags": ["HTML"]
+    },
+    {
+      "question": "What does the <ul> tag stand for?",
+      "correctAnswer": "unordered list",
+      "wrongAnswer":[
+        "underline",
+        "unused link"
+      ],
+      "tags": ["HTML"]
+    },
+    {
+      "question": "Which of the following will produce the largest default heading font?",
+      "correctAnswer": "h1",
+      "wrongAnswer":[
+        "h2",
+        "h3"
+      ],
+      "tags": ["HTML"]
+    },
+    {
+      "question": "True or false: All HTML elements must close with an ending tag.",
+      "correctAnswer": "False",
+      "wrongAnswer":[
+        "True"
+      ],
+      "tags": ["HTML"]
+    },
+    {
+      "question": "What does href refer to?",
+      "correctAnswer": "the URL or web address for a link",
+      "wrongAnswer":[
+        "image file path",
+        "HTML reference"
+      ],
+      "tags": ["HTML"]
+    },
+    {
+      "question": "How many default headings are defined in HTML?",
+      "correctAnswer": "6",
+      "wrongAnswer":[
+        "3",
+        "5"
+      ],
+      "tags": ["HTML"]
+    },
+    {
+      "question": "Which HTML element is metadata stored in?",
+      "correctAnswer": "head element",
+      "wrongAnswer":[
+        "body element",
+        "footer element"
+      ],
+      "tags": ["HTML"]
+    },
+    {
+      "question": "True or false: a web browser recognizes extra white space within a paragraph tag",
+      "correctAnswer": "False",
+      "wrongAnswer":[
+        "True"
+      ],
+      "tags": ["HTML"]
+    },
+    {
+      "question": "Which tag is used to preserve both spaces and line breaks?",
+      "correctAnswer": "pre tag",
+      "wrongAnswer":[
+        "p tag",
+        "spaces tag"
+      ],
+      "tags": ["HTML"]
+    },
+    {
+      "question": "What attribute allows you to use in-line CSS on an HTML element?",
+      "correctAnswer": "style",
+      "wrongAnswer":[
+        "in-line CSS",
+        "CSS-active"
+      ],
+      "tags": ["HTML"]
+    },
+    {
+      "question": "What HTML defines removed or strike-through text?",
+      "correctAnswer": "del",
+      "wrongAnswer":[
+        "cross-out",
+        "strike-through"
+      ],
+      "tags": ["HTML"]
+    },
+    {
+      "question": "True or false: You can only use text as links in HTML?",
+      "correctAnswer": "False",
+      "wrongAnswer":[
+        "True",
+      ],
+      "tags": ["HTML"]
+    },
+    {
+      "question": "What is the default display marking for a list item?",
+      "correctAnswer": "bullet point",
+      "wrongAnswer":[
+        "dash",
+        "none"
+      ],
+      "tags": ["HTML"]
+    },
+    {
+      "question": "Which of the following is not a valid block element?",
+      "correctAnswer": "image element",
+      "wrongAnswer":[
+        "list element",
+        "header element"
+      ],
+      "tags": ["HTML"]
+    },
+    {
+      "question": "Which of the following is a valid inline element?",
+      "correctAnswer": "script",
+      "wrongAnswer":[
+        "article",
+        "figure"
+      ],
+      "tags": ["HTML"]
+    },
+    {
+      "question": "Which tag defines a block-level section in a document?",
+      "correct_answer": "div",
+      "wrongAnswer":[
+        "span",
+        "canvas"
+      ],
+      "tags": ["HTML"]
+    },
+  ]
+}
