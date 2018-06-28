@@ -1,0 +1,131 @@
+{
+    "questions": [
+        {
+            "question": "Which company created JavaScript?",
+            "correctAnswer": "Oracle",
+            "tags": [
+                "Ruby"
+            ],
+            "wrongAnswer": [
+                "Netscape",
+                "Krispy Kreme"
+            ]
+        },
+        {
+            "question": "How many days did it take Brendan Eich to create JavaScript?",
+            "correctAnswer": "10 days",
+            "tags": [
+                "Ruby"
+            ],
+            "wrongAnswer": [
+                "He wasn't the creator",
+                "Forever"
+            ]
+        },
+        {
+            "question": "What was JavaScript originally called?",
+            "correctAnswer": "Mocha",
+            "tags": [
+                "Ruby"
+            ],
+            "wrongAnswer": [
+                "Frappucino",
+                "EcmaScript"
+            ]
+        },
+        {
+            "question": "True or False? JavaScript is dynamically typed.",
+            "correctAnswer": "True",
+            "tags": [
+                "Ruby"
+            ],
+            "wrongAnswer": [
+                "False"
+            ]
+        },
+        {
+            "question": "True or False? Null is an object.",
+            "correctAnswer": "True",
+            "tags": [
+                "Ruby"
+            ],
+            "wrongAnswer": [
+                "False",
+                "null"
+            ]
+        },
+        {
+            "question": "5 divided by 0 is equal to which of the following?",
+            "correctAnswer": "Infinity",
+            "tags": [
+                "Ruby"
+            ],
+            "wrongAnswer": [
+                "Undefined",
+                "A pretty big number"
+            ]
+        },
+        {
+            "question": "Which of the following is a JavaScript event?",
+            "correctAnswer": "onUnload",
+            "tags": [
+                "Ruby"
+            ],
+            "wrongAnswer": [
+                "onJump",
+                "onLinkClick"
+            ]
+        },
+        {
+            "question": "JavaScript is a subset of Java",
+            "correctAnswer": "Hell no!",
+            "tags": [
+                "Ruby"
+            ],
+            "wrongAnswer": [
+                "Hell yes!"
+            ]
+        },
+        {
+            "question": "True or False? Global variables are not created automatically in Strict Mode.",
+            "correctAnswer": "True",
+            "tags": [
+                "Ruby"
+            ],
+            "wrongAnswer": [
+                "False",
+                "What is Strict Mode?"
+            ]
+        },
+        {
+            "question": "True or False? Global variables are not created automatically in Strict Mode.",
+            "correctAnswer": "True",
+            "tags": [
+                "Ruby"
+            ],
+            "wrongAnswer": [
+                "False",
+                "What is Strict Mode?"
+            ]
+        },
+        {
+            "question": "Can we equate two arrays in JavaScript?",
+            "correctAnswer": "Yes",
+            "tags": [
+                "Ruby"
+            ],
+            "wrongAnswer": [
+                "No"
+            ]
+        },
+        {
+            "question": "True or False? JavaScript is weird.",
+            "correctAnswer": "True",
+            "tags": [
+                "Ruby"
+            ],
+            "wrongAnswer": []
+        }
+        // thought the above question would be funny, we can get rid of it if it breaks anything lol
+    ]
+}
