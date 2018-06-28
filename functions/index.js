@@ -56,10 +56,17 @@ app.intent('programming language', (conv, { programmingLanguage }) => {
   const luckyNumber = programmingLanguage.length;
   const audioSound = 'https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg';
   if (conv.data.userName) {
-    conv.ask(`<speak>${programmingLanguage}, got it. ` +
-      // ` ${conv.data.userName}, your lucky number is ` +
-      // `${luckyNumber}.<audio src="${audioSound}"></audio>` +
-      `How many questions would you like?</speak>`);
+    return getQuestions.then(snapshot => {
+      let question_set = snapshot.val();
+      conv.data.questions = question_set;
+      conv.data.answer = question_set[0].correctAnswer;
+      let answers = question_set[0].wrongAnswer.concat([conv.data.answer]);
+      conv.ask(`Got it, ${programmingLanguage}. Let's do it. ${ question_set[0].question }`);
+      return conv.ask(`Is it a. ${answers[0]}?\n` +
+                      `b. ${answers[1]}?\n` +
+                      `or c. ${answers[2]}?`);
+      // return conv.ask();
+    })
   } else {
     conv.ask(
       // `<audio src="${audioSound}"></audio>` +
@@ -67,16 +74,16 @@ app.intent('programming language', (conv, { programmingLanguage }) => {
   }
 });
 
-app.intent('programming language - select.number', (conv, { language, number }) => {
-  return getQuestions.then(snapshot => {
-    let question_set = snapshot.val();
-    conv.data.questions = question_set;
-    return conv.close(
-      `Got it, ${language} and ${number} questions. Let's do it. ` +
-      `${question_set[0].Question}`
-    )
-  })
-});
+// app.intent('programming language - select.number', (conv, { language, number }) => {
+//   return getQuestions.then(snapshot => {
+//     let question_set = snapshot.val();
+//     conv.data.questions = question_set;
+//     return conv.close(
+//       `Got it, ${language} and ${number} questions. Let's do it. ` +
+//       `${question_set[0].Question}`
+//     )
+//   })
+// });
 
 
 
@@ -101,7 +108,7 @@ app.intent('programming language - select.number', (conv, { language, number }) 
 
 
 
-const getQuestions = rootRef.child('Questions').orderByChild('Tags').limitToFirst(5).once('value');
+const getQuestions = rootRef.child('questions').orderByChild('tags').limitToFirst(5).once('value');
 // app.intent('programming language - select.number', (conv, { language, number }) => {
 //   conv.close(`Got it, ${language} and ${number} questions. Let's do it.`);
 // });
