@@ -19,6 +19,11 @@ const rootRef = admin.database().ref();
 // Global reference for current questions
 let question_set;
 
+const successSound = 'https://actions.google.com/sounds/v1/crowds/battle_crowd_celebrate_stutter.ogg';
+const failSound = 'https://actions.google.com/sounds/v1/cartoon/cartoon_boing.ogg';
+const calculateSound = 'https://actions.google.com/sounds/v1/office/keyboard_typing_fast.ogg';
+const gameOverSound = 'https://actions.google.com/sounds/v1/cartoon/cartoon_metal_thunk.ogg'; 
+
 const {
   dialogflow,
   BasicCard,
@@ -56,35 +61,97 @@ app.intent('actions_intent_PERMISSION', (conv, params, permissionGranted) => {
 // The intent collects a parameter named 'color'.
 app.intent('programming language', (conv, { programmingLanguage }) => {
   conv.data.count = 0;
-  const luckyNumber = programmingLanguage.length;
-  const audioSound = 'https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg';
   return getQuestions.then(snapshot => {
     question_set = snapshot.val();
     conv.data.questions = question_set;
     conv.data.answer = question_set[0].correctAnswer;
     let answers = question_set[0].wrongAnswer.concat([conv.data.answer]);
     conv.ask(`Got it, ${programmingLanguage}. Let's do it. ${ question_set[0].question }`);
-    return conv.ask(`Is it a. ${answers[0]}?\n` +
-                    `b. ${answers[1]}?\n` +
-                    `or c. ${answers[2]}?`);
+    return conv.ask(`Is it\n` +
+                    `a. ${answers[0]}?\n` +
+                    `b. ${answers[1]}? or\n` +
+                    `c. ${answers[2]}?`);
     // return conv.ask();
   })
 });
 
 app.intent('programming language - answer1', (conv, { answer }) => {
-  const audioSound = 'https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg';
+  console.log("THE FIRST ANSWER");
   if (answer === 'c') {
     conv.data.count += 1;
-    conv.ask(`<speak><audio>${audioSound}</audio>Wow, first try! Nice job. Next question: ${conv.data.questions[1].question}</speak>`);
+    conv.ask(`<speak><audio src="${successSound}" clipEnd="2.0s" fadeOutDur="2.0s"></audio>Wow, first try! Nice job. Next question: ${conv.data.questions[1].question}</speak>`);
   } else {
-    conv.ask(`<speak><audio>${audioSound}</audio>Sorry, the answer was ${conv.data.answer}. Next question: ${conv.data.questions[1].question}</speak>`);
+    conv.ask(`<speak><audio src="${failSound}"></audio>Sorry, the answer was ${conv.data.answer}. Next question: ${conv.data.questions[1].question}</speak>`);
   }
   conv.data.answer = question_set[1].correctAnswer;
   let answers = question_set[1].wrongAnswer.concat([conv.data.answer]);
-  conv.ask(`Is it a. ${answers[0]}?\n` +
-    `b. ${answers[1]}?\n` +
-    `or c. ${answers[2]}?`);
+  conv.ask(`Is it\n` +
+    `a. ${answers[0]}?\n` +
+    `b. ${answers[1]}? or\n` +
+    `c. ${answers[2]}?`);
 });
+
+app.intent('programming language - answer2', (conv, { answer }) => {
+  console.log("THE SECOND ANSWER");
+  if (answer === 'c') {
+    conv.data.count += 1;
+    conv.ask(`<speak><audio src="${successSound}" clipEnd="2.0s" fadeOutDur="2.0s"></audio>You got it! Here's your next one: ${conv.data.questions[2].question}</speak>`);
+  } else {
+    conv.ask(`<speak><audio src="${failSound}"></audio>Nope, the answer was ${conv.data.answer}. Here's your next one: ${conv.data.questions[2].question}</speak>`);
+  }
+  conv.data.answer = question_set[2].correctAnswer;
+  let answers = question_set[2].wrongAnswer.concat([conv.data.answer]);
+  conv.ask(`Is it\n` +
+    `a. ${answers[0]}?\n` +
+    `b. ${answers[1]}? or\n` +
+    `c. ${answers[2]}?`);
+});
+
+app.intent('programming language - answer3', (conv, { answer }) => {
+  if (answer === 'c') {
+    conv.data.count += 1;
+    conv.ask(`<speak><audio src="${successSound}" clipEnd="2.0s" fadeOutDur="2.0s"></audio>You got it! Here's your next one: ${conv.data.questions[3].question}</speak>`);
+  } else {
+    conv.ask(`<speak><audio src="${failSound}"></audio>Nope, the answer was ${conv.data.answer}. Here's your next one: ${conv.data.questions[3].question}</speak>`);
+  }
+  conv.data.answer = question_set[3].correctAnswer;
+  let answers = question_set[3].wrongAnswer.concat([conv.data.answer]);
+  conv.ask(`Is it\n` +
+    `a. ${answers[0]}?\n` +
+    `b. ${answers[1]}? or\n` +
+    `c. ${answers[2]}?`);
+});
+
+app.intent('programming language - answer4', (conv, { answer }) => {
+  if (answer === 'c') {
+    conv.data.count += 1;
+    conv.ask(`<speak><audio src="${successSound}" clipEnd="2.0s" fadeOutDur="2.0s"></audio>You got it! Here's your next one: ${conv.data.questions[4].question}</speak>`);
+  } else {
+    conv.ask(`<speak><audio src="${failSound}"></audio>Nope, the answer was ${conv.data.answer}. Here's your next one: ${conv.data.questions[4].question}</speak>`);
+  }
+  conv.data.answer = question_set[4].correctAnswer;
+  let answers = question_set[4].wrongAnswer.concat([conv.data.answer]);
+  conv.ask(`Is it\n` +
+    `a. ${answers[0]}?\n` +
+    `b. ${answers[1]}? or\n` +
+    `c. ${answers[2]}?`);
+});
+
+app.intent('programming language - answer5', (conv, { answer }) => {
+  if (answer === 'c') {
+    conv.data.count += 1;
+    conv.ask(`<speak><audio src="${successSound}" clipEnd="2.0s" fadeOutDur="2.0s">` +
+    `</audio>You got it!<audio src="${gameOverSound}" clipStart="1.0s" clipEnd="2.0s">` +
+    `</audio>We made it through this round, let's check your score.</speak>`);
+  } else {
+    conv.ask(`<speak><audio src="${failSound}"></audio>Nope, the answer was ${conv.data.answer}.` +
+    `<audio src="${gameOverSound}" clipStart="1.0s" clipEnd="2.0s">` +
+    `</audio>We made it through this round, let's check your score.</speak>`);
+  }
+  conv.ask(`<speak><audio src="${calculateSound}" clipEnd="2.0s"></audio>` +
+  `You got ${conv.data.count} right! Would you like to go again?</speak>`);
+});
+
 
 // app.intent('programming language - select.number', (conv, { language, number }) => {
 //   return getQuestions.then(snapshot => {
