@@ -64,26 +64,29 @@ app.intent('programming language', (conv, { programmingLanguage }) => {
     conv.data.answer = question_set[0].correctAnswer;
     let answers = question_set[0].wrongAnswer.concat([conv.data.answer]);
     conv.ask(`Got it, ${programmingLanguage}. Let's do it. ${ question_set[0].question }`);
-    return conv.ask(`Is it a. ${answers[0]}?\n` +
-                    `b. ${answers[1]}?\n` +
-                    `or c. ${answers[2]}?`);
+    return conv.ask(`Is it\n` +
+                    `a. ${answers[0]}?\n` +
+                    `b. ${answers[1]}? or\n` +
+                    `c. ${answers[2]}?`);
     // return conv.ask();
   })
 });
 
 app.intent('programming language - answer1', (conv, { answer }) => {
-  const audioSound = 'https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg';
+  const successSound = 'https://actions.google.com/sounds/v1/crowds/battle_crowd_celebrate_stutter.ogg';
+  const failSound = 'https://actions.google.com/sounds/v1/cartoon/cartoon_boing.ogg';
   if (answer === 'c') {
     conv.data.count += 1;
-    conv.ask(`<speak><audio>${audioSound}</audio>Wow, first try! Nice job. Next question: ${conv.data.questions[1].question}</speak>`);
+    conv.ask(`<speak><audio src="${successSound}" clipEnd="2.0s" fadeOutDur="2.0s"></audio>Wow, first try! Nice job. Next question: ${conv.data.questions[1].question}</speak>`);
   } else {
-    conv.ask(`<speak><audio>${audioSound}</audio>Sorry, the answer was ${conv.data.answer}. Next question: ${conv.data.questions[1].question}</speak>`);
+    conv.ask(`<speak><audio src="${failSound}"></audio>Sorry, the answer was ${conv.data.answer}. Next question: ${conv.data.questions[1].question}</speak>`);
   }
   conv.data.answer = question_set[1].correctAnswer;
   let answers = question_set[1].wrongAnswer.concat([conv.data.answer]);
-  conv.ask(`Is it a. ${answers[0]}?\n` +
-    `b. ${answers[1]}?\n` +
-    `or c. ${answers[2]}?`);
+  conv.ask(`Is it\n` +
+    `a. ${answers[0]}?\n` +
+    `b. ${answers[1]}? or\n` +
+    `c. ${answers[2]}?`);
 });
 
 // app.intent('programming language - select.number', (conv, { language, number }) => {
