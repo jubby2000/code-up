@@ -16,6 +16,9 @@ admin.initializeApp(config);
 // Reference database.
 const rootRef = admin.database().ref();
 
+// Global reference for current questions
+let question_set;
+
 const {
   dialogflow,
   BasicCard,
@@ -52,26 +55,35 @@ app.intent('actions_intent_PERMISSION', (conv, params, permissionGranted) => {
 // Handle the Dialogflow intent named 'favorite color'.
 // The intent collects a parameter named 'color'.
 app.intent('programming language', (conv, { programmingLanguage }) => {
-  conv.data.count += 5;
+  conv.data.count = 0;
   const luckyNumber = programmingLanguage.length;
   const audioSound = 'https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg';
-  if (conv.data.userName) {
-    return getQuestions.then(snapshot => {
-      let question_set = snapshot.val();
-      conv.data.questions = question_set;
-      conv.data.answer = question_set[0].correctAnswer;
-      let answers = question_set[0].wrongAnswer.concat([conv.data.answer]);
-      conv.ask(`Got it, ${programmingLanguage}. Let's do it. ${ question_set[0].question }`);
-      return conv.ask(`Is it a. ${answers[0]}?\n` +
-                      `b. ${answers[1]}?\n` +
-                      `or c. ${answers[2]}?`);
-      // return conv.ask();
-    })
+  return getQuestions.then(snapshot => {
+    question_set = snapshot.val();
+    conv.data.questions = question_set;
+    conv.data.answer = question_set[0].correctAnswer;
+    let answers = question_set[0].wrongAnswer.concat([conv.data.answer]);
+    conv.ask(`Got it, ${programmingLanguage}. Let's do it. ${ question_set[0].question }`);
+    return conv.ask(`Is it a. ${answers[0]}?\n` +
+                    `b. ${answers[1]}?\n` +
+                    `or c. ${answers[2]}?`);
+    // return conv.ask();
+  })
+});
+
+app.intent('programming language - answer1', (conv, { answer }) => {
+  const audioSound = 'https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg';
+  if (answer === 'c') {
+    conv.data.count += 1;
+    conv.ask(`<speak><audio>${audioSound}</audio>Wow, first try! Nice job. Next question: ${conv.data.questions[1].question}</speak>`);
   } else {
-    conv.ask(
-      // `<audio src="${audioSound}"></audio>` +
-      `<speak>How many questions would you like?</speak>`);
+    conv.ask(`<speak><audio>${audioSound}</audio>Sorry, the answer was ${conv.data.answer}. Next question: ${conv.data.questions[1].question}</speak>`);
   }
+  conv.data.answer = question_set[1].correctAnswer;
+  let answers = question_set[1].wrongAnswer.concat([conv.data.answer]);
+  conv.ask(`Is it a. ${answers[0]}?\n` +
+    `b. ${answers[1]}?\n` +
+    `or c. ${answers[2]}?`);
 });
 
 // app.intent('programming language - select.number', (conv, { language, number }) => {
