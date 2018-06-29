@@ -1,0 +1,909 @@
+{
+  "questions": [
+    {
+      "question": "What is the highest level in the object model?",
+      "correctAnswer": "BasicObject",
+      "tags": "Ruby",
+      "wrongAnswer": [
+        "Object",
+        "PrimitiveObject"
+      ]
+    },
+    {
+      "question": "Which core object includes the Kernel module?",
+      "correctAnswer": "Object",
+      "tags": "Ruby",
+      "wrongAnswer": [
+        "BasicObject",
+        "PopcornObject"
+      ]
+    },
+    {
+      "question": "Does String include the Enumerable module?",
+      "correctAnswer": "No",
+      "tags": "Ruby",
+      "wrongAnswer": [
+        "Yes"
+      ]
+    },
+    {
+      "question": "What happens when a value becomes too big for Fixnum?",
+      "correctAnswer": "It is automatically converted to a Bignum.",
+      "tags": "Ruby",
+      "wrongAnswer": [
+        "It turns into a Float",
+        "It automatically truncates"
+      ]
+    },
+    {
+      "question": "In what order are the values of a hash iterated?",
+      "correctAnswer": "The order in which they were inserted.",
+      "tags": "Ruby",
+      "wrongAnswer": [
+        "The order of their size",
+        "The order of the keys"
+      ]
+    },
+    {
+      "question": "What are two uses of ranges?",
+      "correctAnswer": "comparison and iteration",
+      "tags": "Ruby",
+      "wrongAnswer": [
+        "collection and comparision",
+        "iteration and collection"
+      ]
+    },
+    {
+      "question": "Which is not a use of the splat operator?",
+      "correctAnswer": "Product of two arrays",
+      "tags": "Ruby",
+      "wrongAnswer": [
+        "Explode or expand the elements of an array.",
+        "Collect arguments of a parameter list into an array."
+      ]
+    },
+    {
+      "question": "Does a while block define a new scope?",
+      "correctAnswer": "No",
+      "tags": "Ruby",
+      "wrongAnswer": [
+        "Yes"
+      ]
+
+    },
+    {
+      "question": "Does the case statement in Ruby have fall-through behavior?",
+      "correctAnswer": "No",
+      "tags": "Ruby",
+      "wrongAnswer": [
+        "Yes"
+      ]
+    },
+    {
+      "question": "What is the meaning of self?",
+      "correctAnswer": "The current object.",
+      "tags": "Ruby",
+      "wrongAnswer": [
+        "The user's conscience",
+        "The current context"
+      ]
+    },
+    {
+      "question": "What does a bang (or exclamation point) at the end of a method signify?",
+      "correctAnswer": "A mutation on the receiver object",
+      "tags": "Ruby",
+      "wrongAnswer": [
+        "A loud operation",
+        "Ruby is excited to execute the method"
+      ]
+    },
+    {
+      "question": "When might you explicitly use the return statement?",
+      "correctAnswer": "To return from a method prematurely",
+      "tags": "Ruby",
+      "wrongAnswer": [
+        "When the Ruby gets bored of executing",
+        "When the method causes a stack overflow"
+      ]
+    },
+    {
+      "question": "What is a singleton method?",
+      "correctAnswer": "A method that is available only on a single object",
+      "tags": "Ruby",
+      "wrongAnswer": [
+        "A method that wants to be alone",
+        "A method that can be executed only once"
+      ]
+    },
+    {
+      "question": "What is a factory method?",
+      "correctAnswer": "An initialization method that creates specialized instances of a class.",
+      "tags": "Ruby",
+      "wrongAnswer": [
+        "A method that is created by the Ruby Environment",
+        "A method that was born in the Industrial Revolution Era"
+      ]
+    },
+    {
+      "question": "What is an IO object?",
+      "correctAnswer": "An object that can be used for file data transfer.",
+      "tags": "Ruby",
+      "wrongAnswer": [
+        "An object that can be used for bulk data deletion",
+        "There's no such thing"
+      ]
+    },
+    {
+      "question": "If more than one version of a Gem is installed, which version will be used?",
+      "correctAnswer": "The Gem with the highest version number.",
+      "tags": "Ruby",
+      "wrongAnswer": [
+        "The Gem that was installed first",
+        "Neither, Ruby hates merge conflicts just as much as you do"
+      ]
+    },
+    {
+      "question": "What error is raised if a method is passed the wrong number of arguments?",
+      "correctAnswer": "ArgumentError",
+      "tags": "Ruby",
+      "wrongAnswer": [
+        "IOError",
+        "404 Error"
+      ]
+    },
+    {
+      "question": "What error is raised if method name resolution fails?",
+      "correctAnswer": "NoMethodError",
+      "tags": "Ruby",
+      "wrongAnswer": [
+        "YesMethodError",
+        "MaybeMethodError"
+      ]
+    },
+    {
+      "question": "What is the difference between \"puts\" and \"print\"?",
+      "correctAnswer": "puts appends a newline character to the output",
+      "tags": "Ruby",
+      "wrongAnswer": [
+        "puts is more efficient",
+        "Ruby likes puts more than print"
+      ]
+    }
+  ]
+}
+
+
+
+
+/**/
+
+
+
+
+
+{
+  "questions": [
+    {
+      "question": "What does CSS stand for?",
+      "correctAnswer": "Cascading Style Sheets",
+      "wrongAnswer":[
+        "Common Style Selectors",
+        "Creative Style Sheets"
+      ],
+      "tags": "CSS"
+    },
+    {
+      "question": "Which property is used to change the background color?",
+      "correctAnswer": "background-color",
+      "wrongAnswer":[
+        "background-style",
+        "apply-color"
+      ],
+      "tags": "CSS"
+    },
+    {
+      "question": "Which CSS property is used to change the text color of an element?",
+      "correctAnswer": "color",
+      "wrongAnswer":[
+        "text-color",
+        "change-color"
+      ],
+      "tags": "CSS"
+    },
+    {
+      "question": "Which CSS property controls the text size?",
+      "correctAnswer": "font-size",
+      "wrongAnswer":[
+        "change-size",
+        "text-size"
+      ],
+      "tags": "CSS"
+    },
+    {
+      "question": "Which property is used to change the font of an element?",
+      "correctAnswer": "font-family",
+      "wrongAnswer":[
+        "font-style",
+        "apply-font"
+      ],
+      "tags": "CSS"
+    },
+    {
+      "question": "Which property is responsible for bolding a text element?",
+      "correctAnswer": "font-weight",
+      "wrongAnswer":[
+        "text-boldness",
+        "text-adjust"
+      ],
+      "tags": "CSS"
+    },
+    {
+      "question": "Which property is used to adjust the outer spacing of an element?",
+      "correctAnswer": "margin",
+      "wrongAnswer":[
+        "padding",
+        "border"
+      ],
+      "tags": "CSS"
+    },
+    {
+      "question": "When using the padding property, are you allowed to use negative values?",
+      "correctAnswer": "No",
+      "wrongAnswer":[
+        "Yes"
+      ],
+      "tags": "CSS"
+    },
+    {
+      "question": "Which of the following CSS properties do not exist?",
+      "correctAnswer": "text-opacity",
+      "wrongAnswer":[
+        "position",
+        "box-sizing"
+      ],
+      "tags": "CSS"
+    },
+    {
+      "question": "True or false: monospace is a generic font family",
+      "correctAnswer": "True",
+      "wrongAnswer":[
+        "False"
+      ],
+      "tags": "CSS"
+    },
+    {
+      "question": "Which of the following a valid supported color name?",
+      "correctAnswer": "Aquamarine",
+      "wrongAnswer":[
+        "Coffee",
+        "Tangerine"
+      ],
+      "tags": "CSS"
+    },
+    {
+      "question": "Which property would you use to remove or add underlines?",
+      "correctAnswer": "text-decoration",
+      "wrongAnswer":[
+        "underline-status",
+        "text-underline"
+      ],
+      "tags": "CSS"
+    },
+    {
+      "question": "Which of the following is an not a valid position value?",
+      "correctAnswer": "temporary",
+      "wrongAnswer":[
+        "static",
+        "sticky"
+      ],
+      "tags": "CSS"
+    },
+    {
+      "question": "Which display property is used to hide elements?",
+      "correctAnswer": "none",
+      "wrongAnswer":[
+        "contents",
+        "minimize"
+      ],
+      "tags": "CSS"
+    },
+    {
+      "question": "Which selector is used to select all immediate elements below an element?",
+      "correctAnswer": "child selector",
+      "wrongAnswer":[
+        "all-below",
+        "next"
+      ],
+      "tags": "CSS"
+    },
+    {
+      "question": "Which of the following is an example of a pseudo-class?",
+      "correctAnswer": "hover",
+      "wrongAnswer":[
+        "body",
+        "footer"
+      ],
+      "tags": "CSS"
+    },
+    {
+      "question": "Which property would you use to adjust capitalization for text?",
+      "correctAnswer": "text-transform",
+      "wrongAnswer":[
+        "capitalize",
+        "text-case"
+      ],
+      "tags": "CSS"
+    },
+    {
+      "question": "What would happen if the opacity of an element was set to 0?",
+      "correctAnswer": "the element would not be displayed on screen",
+      "wrongAnswer":[
+        "the element would be deleted",
+        "nothing"
+      ],
+      "tags": "CSS"
+    },
+    {
+      "question": "Which of the following lengths units are not valid in CSS?",
+      "correctAnswer": "meter",
+      "wrongAnswer":[
+        "millimeter",
+        "pica"
+      ],
+      "tags": "CSS"
+    },
+    {
+      "question": "Which property would you use to round the corners of an element??",
+      "correct_answer": "border-radius",
+      "wrongAnswer":[
+        "roundness",
+        "element-smooth"
+      ],
+      "tags": "CSS"
+    },
+    {
+      "question": "What does HTML stand for?",
+      "correctAnswer": "Hypertext Markup Language",
+      "wrongAnswer":[
+        "Hotmail ",
+        "How To Make Language"
+      ],
+      "tags": "HTML"
+    },
+    {
+      "question": "True or false: all HTML documents must start with a document type declaration",
+      "correctAnswer": "True",
+      "wrongAnswer":[
+        "False"
+      ],
+      "tags": "HTML"
+    },
+    {
+      "question": "What is the 'p' tag used for?",
+      "correctAnswer": "creating a paragraph",
+      "wrongAnswer":[
+        "creating a partition",
+        "creating a new page"
+      ],
+      "tags": "HTML"
+    },
+    {
+      "question": "What type of tag is used to define an HTML link?",
+      "correctAnswer": "anchor tag",
+      "wrongAnswer":[
+        "link tag",
+        "url tag"
+      ],
+      "tags": "HTML"
+    },
+    {
+      "question": "Which of the following is not an attribute of an image tag?",
+      "correctAnswer": "image-border",
+      "wrongAnswer":[
+        "alternative text",
+        "source file"
+      ],
+      "tags": "HTML"
+    },
+    {
+      "question": "What does the <ul> tag stand for?",
+      "correctAnswer": "unordered list",
+      "wrongAnswer":[
+        "underline",
+        "unused link"
+      ],
+      "tags": "HTML"
+    },
+    {
+      "question": "Which of the following will produce the largest default heading font?",
+      "correctAnswer": "h1",
+      "wrongAnswer":[
+        "h2",
+        "h3"
+      ],
+      "tags": "HTML"
+    },
+    {
+      "question": "True or false: All HTML elements must close with an ending tag.",
+      "correctAnswer": "False",
+      "wrongAnswer":[
+        "True"
+      ],
+      "tags": "HTML"
+    },
+    {
+      "question": "What does href refer to?",
+      "correctAnswer": "the URL or web address for a link",
+      "wrongAnswer":[
+        "image file path",
+        "HTML reference"
+      ],
+      "tags": "HTML"
+    },
+    {
+      "question": "How many default headings are defined in HTML?",
+      "correctAnswer": "6",
+      "wrongAnswer":[
+        "3",
+        "5"
+      ],
+      "tags": "HTML"
+    },
+    {
+      "question": "Which HTML element is metadata stored in?",
+      "correctAnswer": "head element",
+      "wrongAnswer":[
+        "body element",
+        "footer element"
+      ],
+      "tags": "HTML"
+    },
+    {
+      "question": "True or false: a web browser recognizes extra white space within a paragraph tag",
+      "correctAnswer": "False",
+      "wrongAnswer":[
+        "True"
+      ],
+      "tags": "HTML"
+    },
+    {
+      "question": "Which tag is used to preserve both spaces and line breaks?",
+      "correctAnswer": "pre tag",
+      "wrongAnswer":[
+        "p tag",
+        "spaces tag"
+      ],
+      "tags": "HTML"
+    },
+    {
+      "question": "What attribute allows you to use in-line CSS on an HTML element?",
+      "correctAnswer": "style",
+      "wrongAnswer":[
+        "in-line CSS",
+        "CSS-active"
+      ],
+      "tags": "HTML"
+    },
+    {
+      "question": "What HTML defines removed or strike-through text?",
+      "correctAnswer": "del",
+      "wrongAnswer":[
+        "cross-out",
+        "strike-through"
+      ],
+      "tags": "HTML"
+    },
+    {
+      "question": "True or false: You can only use text as links in HTML?",
+      "correctAnswer": "False",
+      "wrongAnswer":[
+        "True",
+      ],
+      "tags": "HTML"
+    },
+    {
+      "question": "What is the default display marking for a list item?",
+      "correctAnswer": "bullet point",
+      "wrongAnswer":[
+        "dash",
+        "none"
+      ],
+      "tags": "HTML"
+    },
+    {
+      "question": "Which of the following is not a valid block element?",
+      "correctAnswer": "image element",
+      "wrongAnswer":[
+        "list element",
+        "header element"
+      ],
+      "tags": "HTML"
+    },
+    {
+      "question": "Which of the following is a valid inline element?",
+      "correctAnswer": "script",
+      "wrongAnswer":[
+        "article",
+        "figure"
+      ],
+      "tags": "HTML"
+    },
+    {
+      "question": "Which tag defines a block-level section in a document?",
+      "correct_answer": "div",
+      "wrongAnswer":[
+        "span",
+        "canvas"
+      ],
+      "tags": "HTML"
+    },
+    {
+        "question": "Which company created JavaScript?",
+        "correctAnswer": "Oracle",
+        "tags": "JavaScript",
+        "wrongAnswer": [
+            "Netscape",
+            "Krispy Kreme"
+        ]
+    },
+    {
+        "question": "How many days did it take Brendan Eich to create JavaScript?",
+        "correctAnswer": "10 days",
+        "tags": "JavaScript",
+        "wrongAnswer": [
+            "He wasn't the creator",
+            "Forever"
+        ]
+    },
+    {
+        "question": "What was JavaScript originally called?",
+        "correctAnswer": "Mocha",
+        "tags": "JavaScript",
+        "wrongAnswer": [
+            "Frappucino",
+            "EcmaScript"
+        ]
+    },
+    {
+        "question": "True or False? JavaScript is dynamically typed.",
+        "correctAnswer": "True",
+        "tags": "JavaScript",
+        "wrongAnswer": [
+            "False"
+        ]
+    },
+    {
+        "question": "True or False? Null is an object.",
+        "correctAnswer": "True",
+        "tags": "JavaScript",
+        "wrongAnswer": [
+            "False",
+            "null"
+        ]
+    },
+    {
+        "question": "5 divided by 0 is equal to which of the following?",
+        "correctAnswer": "Infinity",
+        "tags": "JavaScript",
+        "wrongAnswer": [
+            "Undefined",
+            "A pretty big number"
+        ]
+    },
+    {
+        "question": "Which of the following is a JavaScript event?",
+        "correctAnswer": "onUnload",
+        "tags": "JavaScript",
+        "wrongAnswer": [
+            "onJump",
+            "onLinkClick"
+        ]
+    },
+    {
+        "question": "JavaScript is a subset of Java",
+        "correctAnswer": "Hell no!",
+        "tags": "JavaScript",
+        "wrongAnswer": [
+            "Hell yes!"
+        ]
+    },
+    {
+        "question": "True or False? Global variables are not created automatically in Strict Mode.",
+        "correctAnswer": "True",
+        "tags": "JavaScript",
+        "wrongAnswer": [
+            "False",
+            "What is Strict Mode?"
+        ]
+    },
+    {
+        "question": "Can we equate two arrays in JavaScript?",
+        "correctAnswer": "Yes",
+        "tags": "JavaScript",
+        "wrongAnswer": [
+            "No"
+        ]
+    },
+    {
+        "question": "True or False? JavaScript is weird.",
+        "correctAnswer": "True",
+        "tags": "JavaScript",
+        "wrongAnswer": []
+    },
+    // thought the above question would be funny, we can get rid of it if it breaks anything lol
+    {
+        "question": "What do you call JavaScript without any additional frameworks or libraries?",
+        "correctAnswer": "Vanilla",
+        "tags": [
+            "JavaScript",
+        ],
+        "wrongAnswer": [
+          "Plain JavaScript",
+          "Chocolate JavaScript"
+        ]
+    },
+    {
+        "question": "What does each JavaScript statement need to end with?",
+        "correctAnswer": "semicolon",
+        "tags": [
+            "JavaScript",
+        ],
+        "wrongAnswer": [
+          "period",
+          "question mark"
+        ]
+    },
+    {
+        "question": "What is the most common case used in JavaScript?",
+        "correctAnswer": "Lower Camel Case",
+        "tags": [
+            "JavaScript",
+        ],
+        "wrongAnswer": [
+          "Underscore",
+          "Hyphens"
+        ]
+    },
+    {
+        "question": "What data type do you get when you add a Number and String?",
+        "correctAnswer": "String",
+        "tags": [
+            "JavaScript",
+        ],
+        "wrongAnswer": [
+          "Number",
+          "Stringy Number"
+        ]
+    },
+    {
+        "question": "Which of the following is not a valid data type?",
+        "correctAnswer": "Array",
+        "tags": [
+            "JavaScript",
+        ],
+        "wrongAnswer": [
+          "Number",
+          "String"
+        ]
+    },
+    {
+        "question": "How many basic data types are there in JavaScript?",
+        "correctAnswer": "7",
+        "tags": [
+            "JavaScript",
+        ],
+        "wrongAnswer": [
+          "5",
+          "10"
+        ]
+    },
+    {
+        "question": "What data type contains the values true and false?",
+        "correctAnswer": "Boolean",
+        "tags": [
+            "JavaScript",
+        ],
+        "wrongAnswer": [
+          "Binary",
+          "Flag"
+        ]
+    },
+    {
+        "question": "What do you call a block of code designed to perform a particular task?",
+        "correctAnswer": "Function",
+        "tags": [
+            "JavaScript",
+        ],
+        "wrongAnswer": [
+          "Program",
+          "Method"
+        ]
+    },
+    {
+        "question": "What does 'this' refer to in a function definition?",
+        "correctAnswer": "The owner of the function",
+        "tags": [
+            "JavaScript",
+        ],
+        "wrongAnswer": [
+          "A confusing question",
+          "Not 'that'"
+        ]
+    },
+    {
+        "question": "Which company developed SQL?",
+        "correctAnswer": "IBM",
+        "tags": "SQL",
+        "wrongAnswer": [
+            "Oracle",
+            "Microsoft"
+        ]
+    },
+    {
+        "question": "True or False? A Primary Key is required for a table.",
+        "correctAnswer": "False",
+        "tags": "SQL",
+        "wrongAnswer": [
+            "True"
+        ]
+    },
+    {
+        "question": "Which SQL statement is used to extract data from a database?",
+        "correctAnswer": "SELECT",
+        "tags": "SQL",
+        "wrongAnswer": [
+            "GET",
+            "EXTRACT"
+        ]
+    },
+    {
+        "question": "Which of the following is not a SQL statement?",
+        "correctAnswer": "DESTROY TABLE",
+        "tags": "SQL",
+        "wrongAnswer": [
+            "DELETE",
+            "DROP TABLE"
+        ]
+    },
+    {
+        "question": "The S in SQL stands for which of the following?",
+        "correctAnswer": "Structured",
+        "tags": "SQL",
+        "wrongAnswer": [
+            "Standardized",
+            "Sequential"
+        ]
+    },
+    {
+        "question": "What does the underscore represent in a LIKE statement?",
+        "correctAnswer": "Single Character",
+        "tags": "SQL",
+        "wrongAnswer": [
+            "Wildcard Character",
+            "Lowercase Character"
+        ]
+    },
+    {
+        "question": "True or False? The ORDER BY statement is executed before the GROUP BY statement.",
+        "correctAnswer": "False",
+        "tags": "SQL",
+        "wrongAnswer": [
+            "True"
+        ]
+    },
+    {
+        "question": "The JOIN statement defaults to which of the following?",
+        "correctAnswer": "INNER JOIN",
+        "tags": "SQL",
+        "wrongAnswer": [
+            "LEFT JOIN",
+            "FULL JOIN"
+        ]
+    },
+    {
+        "question": "Which SQL statement is used to create an alias?",
+        "correctAnswer": "AS",
+        "tags": "SQL",
+        "wrongAnswer": [
+            "ALIAS",
+            "CREATE"
+        ]
+    },
+    {
+        "question": "An alias cannot be made for which of the following?",
+        "correctAnswer": "Database",
+        "tags": "SQL",
+        "wrongAnswer": [
+            "Table",
+            "Column"
+        ]
+    },
+    {
+        "question": "Which of the following is not a SQL function?",
+        "correctAnswer": "MID",
+        "tags": "SQL",
+        "wrongAnswer": [
+            "MIN",
+            "MAX"
+        ]
+    },
+    {
+        "question": "Is it true that SQL can only be used for relational databases?",
+        "correctAnswer": "Yes",
+        "tags": "SQL",
+        "wrongAnswer": [
+            "No"
+        ]
+    },
+    {
+        "question": "Which of the following is a SQL operator?",
+        "correctAnswer": "NOT",
+        "tags": "SQL",
+        "wrongAnswer": [
+            "NOR",
+            "NIL"
+        ]
+    },
+    {
+        "question": "True or False? UNION ALL is a SQL operator.",
+        "correctAnswer": "True",
+        "tags": "SQL",
+        "wrongAnswer": [
+            "False"
+        ]
+    },
+    {
+        "question": "The EXISTS operator checks for which of the following?",
+        "correctAnswer": "Existence of a record in a subquery",
+        "tags": "SQL",
+        "wrongAnswer": [
+            "Existence of a database given a parameter"
+        ]
+    },
+    {
+        "question": "Which of the following is not a SQL function?",
+        "correctAnswer": "NOTNULL",
+        "tags": "SQL",
+        "wrongAnswer": [
+            "ISNULL",
+            "IFNULL"
+        ]
+    },
+    {
+        "question": "Which SQL statement is used to return only different values?",
+        "correctAnswer": "SELECT DISTINCT",
+        "tags": "SQL",
+        "wrongAnswer": [
+            "SELECT UNIQUE",
+            "SELECT DIFFERENT"
+        ]
+    },
+    {
+        "question": "Which SQL keyword is used to sort the result?",
+        "correctAnswer": "ORDER BY",
+        "tags": "SQL",
+        "wrongAnswer": [
+            "SORT BY",
+            "SORT"
+        ]
+    },
+    {
+        "question": "Which is not a DDL statement?",
+        "correctAnswer": "Delete",
+        "tags": "SQL",
+        "wrongAnswer": [
+            "Truncate",
+            "Alter"
+        ]
+    },
+    {
+        "question": "Which operator is used to select values within a range?",
+        "correctAnswer": "BETWEEN",
+        "tags": "SQL",
+        "wrongAnswer": [
+            "WITHIN",
+            "RANGE"
+        ]
+    }
+  ]
+}
