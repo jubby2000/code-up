@@ -40,13 +40,6 @@ Actions on Google is what allows us to use Google Assistant as our frontend. We 
 * **Demo site**: With demo of the app and other screenshots + information
 
 
-### Bonus
-* Alexa Skill
-* Live demo on demo site
-* Live stats on coding subjects
-
-
-
 ### Key Challenges
 1. Seeding a large amount of data into the database (JSON format), in a way that can be retrieved appropriately
 2. Separating logic for if a user's device has a screen or if it's audio only and serving up appropriate content and conversation flow
@@ -71,20 +64,18 @@ We stored our question and answer seed data in JSON Format in a NoSQL database h
         }
     ]
 }
-
 ```
 
-## Things Accomplished Over the Weekend
-* Research MERN stack, and decide against it in favor of Node.js and Firebase for compatibility
-* Build sample projects (Actions on Google) to get an idea of where we need to diverge
-* Begin building conversation logic
+## Contributors
+* [Farah Quader](https://www.github.com/FarahYQ)
+* [Jacob Barlow](https://www.github.com/jubby2000)
+* [Ken Chan](https://www.github.com/kchansf5)
+* [Shashank Racherla](https://www.github.com/srac1777)
 
-## Group Members and Work Breakdown
-**Farah Quader, Jacob Barlow, Ken Chan, Shashank Racherla**
-* W11D1 - Finalize Firebase storage schema, tie into Node **Farah, Jacob**
-* W11D2 - Build seed slices **All**
-* W11D3 - Build seed slices **All**
-* W11D4 - Build seed slices **All**
-* W11D5 - Build seed slices **All**
-* W11D6 - Build demo site **Ken, Shasha**
-* W11D7 - Build demo site **Ken, Shasha**
+
+### Future Improvements
+We plan on improving CodeUp with the following features in the future:
+* Make it available on Amazon Products as an Alexa Skill
+* Allow Users to create profiles and view their quiz history and stats
+* Expand on the languages available for training
+
