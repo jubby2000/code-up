@@ -22,7 +22,7 @@ We went with Node.js for the backend to handle User Intent requests, conversatio
 DialogFlow bridges Actions on Google to Node.js, allowing us to utilize its Natural Language Understanding (NLU) SDK to parse user speech and text responses. It provides a console where conversation can be structured using Intents and Entities. An Intent represents a mapping between what user says and what action should be taken by your software. Entites are used to extract parameter values from natural language inputs. We can also train the AI on which user phrases to capture as entities.
 
 ![Actions on Google]()
-Actions on Google is what allows us to use Google Assistant as our frontend. It is a platform to 
+Actions on Google is what allows us to use Google Assistant as our frontend. We used it as our entry point to create our app and send user input to our NLU SDK (DialogFlow).
 
 ### Wireframes and mockups
 ![Logos](https://github.com/jubby2000/code-up/blob/master/logo-mockups.png?raw=true)
