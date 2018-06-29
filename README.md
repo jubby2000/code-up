@@ -1,6 +1,6 @@
 ## Introduction
 
-CodeUp is a Google Assistant Code Training and Trivia app. Users can learn about languages like Ruby, JavaScript, SQL, HTML and CSS.
+CodeUp is a Google Assistant Code Training and Trivia App. Users can learn about languages like Ruby, JavaScript, SQL, HTML and CSS.
 The idea is that the app can be invoked via a hotword: "Okay Google, talk to CodeUp" or via a deeplink: "Okay Google, talk to CodeUp about SQL". 
 
 The app begins a conversation with the user, offering trivia questions related to the language of their choice.
@@ -18,9 +18,11 @@ For our Database we chose to use Google Firebase's Realtime Database Platform in
 ![NodeJs]()
 We went with Node.js for the backend to handle User Intent requests, conversation logic and query the database.
 
+![DialogFlow]()
+DialogFlow bridges Actions on Google to Node.js, allowing us to utilize its Natural Language Understanding (NLU) SDK to parse user speech and text responses. It provides a console where conversation can be structured using Intents and Entities. An Intent represents a mapping between what user says and what action should be taken by your software. Entites are used to extract parameter values from natural language inputs. We can also train the AI on which user phrases to capture as entities.
 
-* Node.js backend to 
-* Dialogflow on the "frontend" to train the AI on which user phrases to capture as variables
+![Actions on Google]()
+Actions on Google is what allows us to use Google Assistant as our frontend. It is a platform to 
 
 ### Wireframes and mockups
 ![Logos](https://github.com/jubby2000/code-up/blob/master/logo-mockups.png?raw=true)
