@@ -4,7 +4,7 @@
             "question": "Which company created JavaScript?",
             "correctAnswer": "Oracle",
             "tags": [
-                "Ruby"
+                "JavaScript"
             ],
             "wrongAnswer": [
                 "Netscape",
@@ -15,7 +15,7 @@
             "question": "How many days did it take Brendan Eich to create JavaScript?",
             "correctAnswer": "10 days",
             "tags": [
-                "Ruby"
+                "JavaScript"
             ],
             "wrongAnswer": [
                 "He wasn't the creator",
@@ -26,7 +26,7 @@
             "question": "What was JavaScript originally called?",
             "correctAnswer": "Mocha",
             "tags": [
-                "Ruby"
+                "JavaScript"
             ],
             "wrongAnswer": [
                 "Frappucino",
@@ -37,7 +37,7 @@
             "question": "True or False? JavaScript is dynamically typed.",
             "correctAnswer": "True",
             "tags": [
-                "Ruby"
+                "JavaScript"
             ],
             "wrongAnswer": [
                 "False"
@@ -47,7 +47,7 @@
             "question": "True or False? Null is an object.",
             "correctAnswer": "True",
             "tags": [
-                "Ruby"
+                "JavaScript"
             ],
             "wrongAnswer": [
                 "False",
@@ -58,7 +58,7 @@
             "question": "5 divided by 0 is equal to which of the following?",
             "correctAnswer": "Infinity",
             "tags": [
-                "Ruby"
+                "JavaScript"
             ],
             "wrongAnswer": [
                 "Undefined",
@@ -69,7 +69,7 @@
             "question": "Which of the following is a JavaScript event?",
             "correctAnswer": "onUnload",
             "tags": [
-                "Ruby"
+                "JavaScript"
             ],
             "wrongAnswer": [
                 "onJump",
@@ -80,7 +80,7 @@
             "question": "JavaScript is a subset of Java",
             "correctAnswer": "Hell no!",
             "tags": [
-                "Ruby"
+                "JavaScript"
             ],
             "wrongAnswer": [
                 "Hell yes!"
@@ -90,18 +90,7 @@
             "question": "True or False? Global variables are not created automatically in Strict Mode.",
             "correctAnswer": "True",
             "tags": [
-                "Ruby"
-            ],
-            "wrongAnswer": [
-                "False",
-                "What is Strict Mode?"
-            ]
-        },
-        {
-            "question": "True or False? Global variables are not created automatically in Strict Mode.",
-            "correctAnswer": "True",
-            "tags": [
-                "Ruby"
+                "JavaScript"
             ],
             "wrongAnswer": [
                 "False",
@@ -112,7 +101,7 @@
             "question": "Can we equate two arrays in JavaScript?",
             "correctAnswer": "Yes",
             "tags": [
-                "Ruby"
+                "JavaScript"
             ],
             "wrongAnswer": [
                 "No"
@@ -122,10 +111,109 @@
             "question": "True or False? JavaScript is weird.",
             "correctAnswer": "True",
             "tags": [
-                "Ruby"
+                "JavaScript"
             ],
             "wrongAnswer": []
-        }
+        },
         // thought the above question would be funny, we can get rid of it if it breaks anything lol
+        {
+            "question": "What do you call JavaScript without any additional frameworks or libraries?",
+            "correctAnswer": "Vanilla",
+            "tags": [
+                "JavaScript",
+            ],
+            "wrongAnswer": [
+              "Plain JavaScript",
+              "Chocolate JavaScript"
+            ]
+        },
+        {
+            "question": "What does each JavaScript statement need to end with?",
+            "correctAnswer": "semicolon",
+            "tags": [
+                "JavaScript",
+            ],
+            "wrongAnswer": [
+              "period",
+              "question mark"
+            ]
+        },
+        {
+            "question": "What is the most common case used in JavaScript?",
+            "correctAnswer": "Lower Camel Case",
+            "tags": [
+                "JavaScript",
+            ],
+            "wrongAnswer": [
+              "Underscore",
+              "Hyphens"
+            ]
+        },
+        {
+            "question": "What data type do you get when you add a Number and String?",
+            "correctAnswer": "String",
+            "tags": [
+                "JavaScript",
+            ],
+            "wrongAnswer": [
+              "Number",
+              "Stringy Number"
+            ]
+        },
+        {
+            "question": "Which of the following is not a valid data type?",
+            "correctAnswer": "Array",
+            "tags": [
+                "JavaScript",
+            ],
+            "wrongAnswer": [
+              "Number",
+              "String"
+            ]
+        },
+        {
+            "question": "How many basic data types are there in JavaScript?",
+            "correctAnswer": "7",
+            "tags": [
+                "JavaScript",
+            ],
+            "wrongAnswer": [
+              "5",
+              "10"
+            ]
+        },
+        {
+            "question": "What data type contains the values true and false?",
+            "correctAnswer": "Boolean",
+            "tags": [
+                "JavaScript",
+            ],
+            "wrongAnswer": [
+              "Binary",
+              "Flag"
+            ]
+        },
+        {
+            "question": "What do you call a block of code designed to perform a particular task?",
+            "correctAnswer": "Function",
+            "tags": [
+                "JavaScript",
+            ],
+            "wrongAnswer": [
+              "Program",
+              "Method"
+            ]
+        },
+        {
+            "question": "What does 'this' refer to in a function definition?",
+            "correctAnswer": "The owner of the function",
+            "tags": [
+                "JavaScript",
+            ],
+            "wrongAnswer": [
+              "A confusing question",
+              "Not 'that'"
+            ]
+        },
     ]
 }
