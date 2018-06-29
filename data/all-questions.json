@@ -1,6 +1,15 @@
 {
   "questions": [
     {
+      "question": "Who invented the Ruby language?",
+      "correctAnswer": "Yukihiro Matsumoto",
+      "tags": "Ruby",
+      "wrongAnswer": [
+        "Steve Jobs",
+        "Bill Gates"
+      ]
+    },
+    {
       "question": "What is the highest level in the object model?",
       "correctAnswer": "BasicObject",
       "tags": "Ruby",
@@ -168,21 +177,7 @@
         "puts is more efficient",
         "Ruby likes puts more than print"
       ]
-    }
-  ]
-}
-
-
-
-
-/**/
-
-
-
-
-
-{
-  "questions": [
+    },
     {
       "question": "What does CSS stand for?",
       "correctAnswer": "Cascading Style Sheets",
