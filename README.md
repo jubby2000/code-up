@@ -52,131 +52,26 @@ Actions on Google is what allows us to use Google Assistant as our frontend. We 
 2. Separating logic for if a user's device has a screen or if it's audio only and serving up appropriate content and conversation flow
 3. Reduce latency as low as possible to improve user experience
 
-## Schema Considerations
-Easier to query, less variety in terms of incorrect answer options
+## Schema
+We stored our question and answer seed data in JSON Format in a NoSQL database hosted remotely on a cloud platform provided by Google Firebase.
 ```javascript
 {
-  "Questions": {
-    "Q1": "What are all the values that are considered falsey in JavaScript?"
-    }
-  "Answers": {
-    "A1": {
-       "body": "null and NaN",
-       "q_id": "Q1",
-       "answer_type": false
-      },
-    "A2": {
-       "body": "zeros, empty strings, undefined, null, and NaN",
-       "q_id": "Q1",
-       "answer_type": true
-      },
-    "A3": {
-       "body": "zeros, ones, empty strings, undefined, null, and NaN",
-       "q_id": "Q1",
-       "answer_type": false
-      }
-    },
-  "Tags": {
-    "T1": "JavaScript",
-    "T2": "Ruby",
-    "T3": "React",
-    "T4": "Ruby on Rails",
-    "T5": "Data Types",
-    "T6": "Variables"
-    },
-  "Question_taggings": {
-    "Q1": {
-      "T1": "JavaScript",
-      "T5": "Data Types"
-     },
-    "Q2": {
-      "T1": "JavaScript",
-      "T6": "Variables"
-     }
-    },
-  "Answer_taggings": {
-    "A1": {
-      "T1": "JavaScript",
-      "T5": "Data Types"
-     },
-    "A2": {
-      "T1": "JavaScript",
-      "T5": "Data Types"
-      },
-    "A3": {
-      "T1": "JavaScript",
-      "T5": "Data Types"
-      }
-    }
-  }
-```
+    "questions": [
+        {
+            "question": "Which of the following is not a valid data type?",
+            "correctAnswer": "Array",
+            "tags": "JavaScript",
+            "wrongAnswer": [ "Number", "String" ]
+        },
+        {
+            "question": "How many basic data types are there in JavaScript?",
+            "correctAnswer": "7",
+            "tags": "JavaScript",
+            "wrongAnswer": [ "5", "10" ]
+        }
+    ]
+}
 
-More variety, and also more required up front in terms of questions and answer design:
-```javascript
-{
-  "Questions": {
-    "Q1": {
-      "body": "What are all the values that are considered falsey in JavaScript?",
-      "correct_answer_id": "A2"
-      },
-    "Q2": {
-      "body": "How do we declare a constant 'favFood' using ES6+ syntax?",
-      "correct_answer_id": "A6"
-      }
-    }
-  "Answers": {
-    "A1": "body": "null and NaN",
-    "A2": "body": "zeros, empty strings, undefined, null, and NaN",
-    "A3": "body": "zeros, ones, empty strings, undefined, null, and NaN",
-    "A4": "body": "var favFood = 'pizza';",
-    "A5": "body": "let favFood = 'pizza';",
-    "A6": "body": "const favFood = 'pizza';"
-    },
-  "Tags": {
-    "T1": "JavaScript",
-    "T2": "Ruby",
-    "T3": "React",
-    "T4": "Ruby on Rails",
-    "T5": "Data Types",
-    "T6": "Variables"
-    },
-  "Question_taggings": {
-    "Q1": {
-      "T1": "JavaScript",
-      "T5": "Data Types"
-     },
-    "Q2": {
-      "T1": "JavaScript",
-      "T6": "Variables"
-     }
-    },
-  "Answer_taggings": {
-    "A1": {
-      "T1": "JavaScript",
-      "T5": "Data Types"
-     },
-    "A2": {
-      "T1": "JavaScript",
-      "T5": "Data Types"
-      },
-    "A3": {
-      "T1": "JavaScript",
-      "T5": "Data Types"
-      },
-    "A4": {
-      "T1": "JavaScript",
-      "T5": "Variables"
-      },
-    "A5": {
-      "T1": "JavaScript",
-      "T5": "Variables"
-      },
-    "A6": {
-      "T1": "JavaScript",
-      "T5": "Variables"
-      }
-    }
-  }
 ```
 
 ## Things Accomplished Over the Weekend
