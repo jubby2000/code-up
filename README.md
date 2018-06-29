@@ -1,10 +1,26 @@
-## Background and Overview
+## Introduction
 
-CodeUp is a voice-assistant code training/trivia app. The idea is that the app can be invoked via hotword: "Okay Google, talk to CodeUp" or via deeplink: "Okay Google, talk to CodeUp about SQL." 
+CodeUp is a Google Assistant Code Training and Trivia app. Users can learn about languages like Ruby, JavaScript, SQL, HTML and CSS.
+The idea is that the app can be invoked via a hotword: "Okay Google, talk to CodeUp" or via a deeplink: "Okay Google, talk to CodeUp about SQL". 
 
-The app will be able to begin a conversation with the user, offering trivia questions related to that topic if invoked via audio, and text-based code challenges (or trivia) if invoked on a device with a screen.
+The app begins a conversation with the user, offering trivia questions related to the language of their choice.
 
-Users will be able to continue the conversation until they choose to stop, and the app will be able to keep track of scores throughout the conversation and (perhaps) across sessions.
+Users continue the conversation until they choose to stop -the app keeps track of scores throughout the conversation.
+
+## Technologies
+firebase
+nodejs
+dialogflow
+actions on google
+![Firebase]()
+For our Database we chose to use Google Firebase's Realtime Database Platform in order to integrate well with our other technologies (more on this later). Firebase handles asset, database, and function storage. !!!It stores the data in JSON format in its NoSQL database.!!! 
+
+![NodeJs]()
+We went with Node.js for the backend to handle User Intent requests, conversation logic and query the database.
+
+
+* Node.js backend to 
+* Dialogflow on the "frontend" to train the AI on which user phrases to capture as variables
 
 ### Wireframes and mockups
 ![Logos](https://github.com/jubby2000/code-up/blob/master/logo-mockups.png?raw=true)
@@ -27,11 +43,7 @@ Users will be able to continue the conversation until they choose to stop, and t
 * Live demo on demo site
 * Live stats on coding subjects
 
-## Technologies and Technical Challenges
 
-* Node.js backend to handle intent requests, conversation logic and retrieving database data.
-* Firebase will handle asset, database, and function storage.
-* Dialogflow on the "frontend" to train the AI on which user phrases to capture as variables
 
 ### Key Challenges
 1. Seeding a large amount of data into the database (JSON format), in a way that can be retrieved appropriately
