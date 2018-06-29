@@ -1,3 +1,11 @@
+## Table of Contents
+* [Introduction](#Introduction)
+* [Technologies](#Technologies)
+* [Technical Challenges](#Technical-Challenges)
+* [Database Schema](#Database-Schema)
+* [Future Improvements](#Future-Improvements)
+* [Contributors](#Contributors)
+
 ## Introduction
 
 CodeUp is a Google Assistant Code Training and Trivia App. Users can learn about languages like Ruby, JavaScript, SQL, HTML and CSS.
@@ -6,6 +14,7 @@ The idea is that the app can be invoked via a hotword: "Okay Google, talk to Cod
 The app begins a conversation with the user, offering trivia questions related to the language of their choice.
 
 Users continue the conversation until they choose to stop -the app keeps track of scores throughout the conversation.
+!!! IMAGE!!!!
 
 ## Technologies
 firebase
@@ -24,28 +33,17 @@ DialogFlow bridges Actions on Google to Node.js, allowing us to utilize its Natu
 ![Actions on Google]()
 Actions on Google is what allows us to use Google Assistant as our frontend. We used it as our entry point to create our app and send user input to our NLU SDK (DialogFlow).
 
-### Wireframes and mockups
+
 ![Logos](https://github.com/jubby2000/code-up/blob/master/logo-mockups.png?raw=true)
 ![Demo site](https://github.com/jubby2000/code-up/blob/master/codeup_wireframes.png?raw=true)
 
-## Functionality and MVP
-
-* **Basic Startup**: Users can invoke and stop the app using custom hotword (“Okay Google, let me talk to CodeUp”, “stop”)
-    1. Done with Dialogflow GUI
-* **Trivia Initialization**: Users can choose a category and a desired number of questions.
-    1. Checks in frontend for availability of chosen category
-* **Basic trivia logic**: Looping through questions, presenting options for each question and responding to correct answers
-    1. POST request to backend and return response, correct answer checking done too
-* **Full functionality**: Keeping track of scores, multiple play-through, fallbacks and error-handling
-* **Demo site**: With demo of the app and other screenshots + information
-
-
-### Key Challenges
+## Technical Challenges
 1. Seeding a large amount of data into the database (JSON format), in a way that can be retrieved appropriately
 2. Separating logic for if a user's device has a screen or if it's audio only and serving up appropriate content and conversation flow
 3. Reduce latency as low as possible to improve user experience
 
-## Schema
+
+## Database Schema
 We stored our question and answer seed data in JSON Format in a NoSQL database hosted remotely on a cloud platform provided by Google Firebase.
 ```javascript
 {
