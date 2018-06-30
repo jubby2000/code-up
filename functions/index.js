@@ -17,9 +17,6 @@ admin.initializeApp(config);
 // Reference database.
 const rootRef = admin.database().ref();
 
-// Global reference for current questions
-// let question_set;
-
 const successSound = 'https://actions.google.com/sounds/v1/crowds/battle_crowd_celebrate_stutter.ogg';
 const failSound = 'https://actions.google.com/sounds/v1/cartoon/cartoon_boing.ogg';
 const calculateSound = 'https://actions.google.com/sounds/v1/office/keyboard_typing_fast.ogg';
@@ -84,15 +81,18 @@ app.intent('programming language', (conv, { programmingLanguage }) => {
 });
 
 app.intent('programming language - answer1', (conv, { answer }) => {
-  console.log("THE FIRST ANSWER");
+
   let answer_idx = ['a','b','c'].indexOf(answer);
   let correct_answer_idx = conv.data.answers.indexOf(conv.data.answer);
 
   if (answer_idx === correct_answer_idx) {
     conv.data.count += 1;
-    conv.ask(`<speak><audio src="${successSound}" clipEnd="2.0s" fadeOutDur="2.0s"></audio>Wow, first try! Nice job. Next question: ${conv.data.questions[1].question}</speak>`);
+    conv.ask(`<speak><audio src="${successSound}" clipEnd="2.0s" fadeOutDur="3.0s">` +
+    `</audio><break time="200ms"/>Wow, first try! Nice job. Next question: ${conv.data.questions[1].question}</speak>`);
   } else {
-    conv.ask(`<speak><audio src="${failSound}"></audio>Sorry, the answer was ${conv.data.answer}. Next question: ${conv.data.questions[1].question}</speak>`);
+    conv.ask(`<speak><audio src="${failSound}"></audio>` +
+    `Sorry, the answer was ${conv.data.answer}. ` +
+    `Next question: ${conv.data.questions[1].question}</speak>`);
   }
 
   conv.data.answer = conv.data.questions[1].correctAnswer;
@@ -117,9 +117,12 @@ app.intent('programming language - answer2', (conv, { answer }) => {
 
   if (answer_idx === correct_answer_idx) {
     conv.data.count += 1;
-    conv.ask(`<speak><audio src="${successSound}" clipEnd="2.0s" fadeOutDur="2.0s"></audio>You got it! Here's your next one: ${conv.data.questions[2].question}</speak>`);
+    conv.ask(`<speak><audio src="${successSound}" clipEnd="2.0s" fadeOutDur="3.0s"></audio>` +
+    `<break time="200ms"/>You got it! Here's your next one: ${conv.data.questions[2].question}</speak>`);
   } else {
-    conv.ask(`<speak><audio src="${failSound}"></audio>Nope, the answer was ${conv.data.answer}. Here's your next one: ${conv.data.questions[2].question}</speak>`);
+    conv.ask(`<speak><audio src="${failSound}"></audio>` +
+    `Nope, the answer was ${conv.data.answer}. ` +
+    `Here's your next one: ${conv.data.questions[2].question}</speak>`);
   }
   conv.data.answer = conv.data.questions[2].correctAnswer;
 
@@ -142,9 +145,12 @@ app.intent('programming language - answer3', (conv, { answer }) => {
 
   if (answer_idx === correct_answer_idx) {
     conv.data.count += 1;
-    conv.ask(`<speak><audio src="${successSound}" clipEnd="2.0s" fadeOutDur="2.0s"></audio>You got it! Here's your next one: ${conv.data.questions[3].question}</speak>`);
+    conv.ask(`<speak><audio src="${successSound}" clipEnd="2.0s" fadeOutDur="3.0s"></audio>` +
+    `<break time="200ms"/>You got it! Here's your next one: ${conv.data.questions[3].question}</speak>`);
   } else {
-    conv.ask(`<speak><audio src="${failSound}"></audio>Nope, the answer was ${conv.data.answer}. Here's your next one: ${conv.data.questions[3].question}</speak>`);
+    conv.ask(`<speak><audio src="${failSound}"></audio>` +
+    `Nope, the answer was ${conv.data.answer}. `+
+    `Here's your next one: ${conv.data.questions[3].question}</speak>`);
   }
   conv.data.answer = conv.data.questions[3].correctAnswer;
 
@@ -167,9 +173,12 @@ app.intent('programming language - answer4', (conv, { answer }) => {
 
   if (answer_idx === correct_answer_idx) {
     conv.data.count += 1;
-    conv.ask(`<speak><audio src="${successSound}" clipEnd="2.0s" fadeOutDur="2.0s"></audio>You got it! Here's your next one: ${conv.data.questions[4].question}</speak>`);
+    conv.ask(`<speak><audio src="${successSound}" clipEnd="2.0s" fadeOutDur="3.0s"></audio>` +
+    `<break time="200ms"/>You got it! Alright, final question: ${conv.data.questions[4].question}</speak>`);
   } else {
-    conv.ask(`<speak><audio src="${failSound}"></audio>Nope, the answer was ${conv.data.answer}. Here's your next one: ${conv.data.questions[4].question}</speak>`);
+    conv.ask(`<speak><audio src="${failSound}"></audio>` +
+    `Nope, the answer was ${conv.data.answer}. ` +
+    `Alright, final question: ${conv.data.questions[4].question}</speak>`);
   }
   conv.data.answer = conv.data.questions[4].correctAnswer;
 
@@ -192,16 +201,17 @@ app.intent('programming language - answer5', (conv, { answer }) => {
 
   if (answer_idx === correct_answer_idx) {
     conv.data.count += 1;
-    conv.ask(`<speak><audio src="${successSound}" clipEnd="2.0s" fadeOutDur="2.0s">` +
-    `</audio>You got it!<audio src="${gameOverSound}" clipStart="1.0s" clipEnd="2.0s">` +
-    `</audio>We made it through this round, let's check your score.</speak>`);
+    conv.ask(`<speak><audio src="${successSound}" clipEnd="2.0s" fadeOutDur="3.0s">` +
+    `</audio><break time="200ms"/>You got it!<break time="100ms"/>` +
+    `<audio src="${gameOverSound}" clipStart="2.5s" clipEnd="3.5s">` +
+    `</audio>That sound means we're at the end of this round, let's check your score.</speak>`);
   } else {
     conv.ask(`<speak><audio src="${failSound}"></audio>Nope, the answer was ${conv.data.answer}.` +
-    `<audio src="${gameOverSound}" clipStart="1.0s" clipEnd="2.0s">` +
-    `</audio>We made it through this round, let's check your score.</speak>`);
+    `<break time="100ms"/><audio src="${gameOverSound}" clipStart="2.5s" clipEnd="3.5s">` +
+    `</audio>That sound means we're at the end of this round, let's check your score.</speak>`);
   }
-  conv.ask(`<speak><audio src="${calculateSound}" clipEnd="2.0s"></audio>` +
-  `You got ${conv.data.count} right! Would you like to go again?</speak>`);
+  conv.ask(`<speak><audio src="${calculateSound}" soundLevel="+30dB" fadeOutDur="2.0s" clipEnd="2.0s"></audio>` +
+  `<break time="500ms"/>You got ${conv.data.count} right! Would you like to go again?</speak>`);
 });
 
 app.intent('Answers Fallback', (conv) => {
@@ -219,7 +229,7 @@ app.intent('Answers Fallback', (conv) => {
 //     conv.data.questions = conv.data.questions;
 //     return conv.close(
 //       `Got it, ${language} and ${number} questions. Let's do it. ` +
-//       `${question_set[0].Question}`
+//       `${conv.data.questions[0].Question}`
 //     )
 //   })
 // });
