@@ -569,10 +569,10 @@
     },
     {
         "question": "True or False? Null is an object.",
-        "correctAnswer": "True",
+        "correctAnswer": "False",
         "tags": "JavaScript",
         "wrongAnswer": [
-            "False",
+            "True",
             "null"
         ]
     },
