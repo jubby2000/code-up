@@ -3,7 +3,7 @@
     {
       "question": "What is the highest level in the object model?",
       "correctAnswer": "BasicObject",
-      "tags": ["Ruby"],
+      "tags": "Ruby",
       "wrongAnswer": [
         "Object",
         "PrimitiveObject"
@@ -12,7 +12,7 @@
     {
       "question": "Which core object includes the Kernel module?",
       "correctAnswer": "Object",
-      "tags": ["Ruby"],
+      "tags": "Ruby",
       "wrongAnswer": [
         "BasicObject",
         "PopcornObject"
@@ -21,7 +21,7 @@
     {
       "question": "Does String include the Enumerable module?",
       "correctAnswer": "No",
-      "tags": ["Ruby"],
+      "tags": "Ruby",
       "wrongAnswer": [
         "Yes"
       ]
@@ -29,7 +29,7 @@
     {
       "question": "What happens when a value becomes too big for Fixnum?",
       "correctAnswer": "It is automatically converted to a Bignum.",
-      "tags": ["Ruby"],
+      "tags": "Ruby",
       "wrongAnswer": [
         "It turns into a Float",
         "It automatically truncates"
@@ -38,7 +38,7 @@
     {
       "question": "In what order are the values of a hash iterated?",
       "correctAnswer": "The order in which they were inserted.",
-      "tags": ["Ruby"],
+      "tags": "Ruby",
       "wrongAnswer": [
         "The order of their size",
         "The order of the keys"
@@ -47,7 +47,7 @@
     {
       "question": "What are two uses of ranges?",
       "correctAnswer": "comparison and iteration",
-      "tags": ["Ruby"],
+      "tags": "Ruby",
       "wrongAnswer": [
         "collection and comparision",
         "iteration and collection"
@@ -56,7 +56,7 @@
     {
       "question": "Which is not a use of the splat operator?",
       "correctAnswer": "Product of two arrays",
-      "tags": ["Ruby"],
+      "tags": "Ruby",
       "wrongAnswer": [
         "Explode or expand the elements of an array.",
         "Collect arguments of a parameter list into an array."
@@ -65,16 +65,16 @@
     {
       "question": "Does a while block define a new scope?",
       "correctAnswer": "No",
-      "tags": ["Ruby"],
+      "tags": "Ruby",
       "wrongAnswer": [
         "Yes"
       ]
-      
+
     },
     {
       "question": "Does the case statement in Ruby have fall-through behavior?",
       "correctAnswer": "No",
-      "tags": ["Ruby"],
+      "tags": "Ruby",
       "wrongAnswer": [
         "Yes"
       ]
@@ -82,7 +82,7 @@
     {
       "question": "What is the meaning of self?",
       "correctAnswer": "The current object.",
-      "tags": ["Ruby"],
+      "tags": "Ruby",
       "wrongAnswer": [
         "The user's conscience",
         "The current context"
@@ -91,7 +91,7 @@
     {
       "question": "What does a bang (or exclamation point) at the end of a method signify?",
       "correctAnswer": "A mutation on the receiver object",
-      "tags": ["Ruby"],
+      "tags": "Ruby",
       "wrongAnswer": [
         "A loud operation",
         "Ruby is excited to execute the method"
@@ -100,7 +100,7 @@
     {
       "question": "When might you explicitly use the return statement?",
       "correctAnswer": "To return from a method prematurely",
-      "tags": ["Ruby"],
+      "tags": "Ruby",
       "wrongAnswer": [
         "When the Ruby gets bored of executing",
         "When the method causes a stack overflow"
@@ -109,7 +109,7 @@
     {
       "question": "What is a singleton method?",
       "correctAnswer": "A method that is available only on a single object",
-      "tags": ["Ruby"],
+      "tags": "Ruby",
       "wrongAnswer": [
         "A method that wants to be alone",
         "A method that can be executed only once"
@@ -118,7 +118,7 @@
     {
       "question": "What is a factory method?",
       "correctAnswer": "An initialization method that creates specialized instances of a class.",
-      "tags": ["Ruby"],
+      "tags": "Ruby",
       "wrongAnswer": [
         "A method that is created by the Ruby Environment",
         "A method that was born in the Industrial Revolution Era"
@@ -127,7 +127,7 @@
     {
       "question": "What is an IO object?",
       "correctAnswer": "An object that can be used for file data transfer.",
-      "tags": ["Ruby"],
+      "tags": "Ruby",
       "wrongAnswer": [
         "An object that can be used for bulk data deletion",
         "There's no such thing"
@@ -136,7 +136,7 @@
     {
       "question": "If more than one version of a Gem is installed, which version will be used?",
       "correctAnswer": "The Gem with the highest version number.",
-      "tags": ["Ruby"],
+      "tags": "Ruby",
       "wrongAnswer": [
         "The Gem that was installed first",
         "Neither, Ruby hates merge conflicts just as much as you do"
@@ -145,7 +145,7 @@
     {
       "question": "What error is raised if a method is passed the wrong number of arguments?",
       "correctAnswer": "ArgumentError",
-      "tags": ["Ruby"],
+      "tags": "Ruby",
       "wrongAnswer": [
         "IOError",
         "404 Error"
@@ -154,7 +154,7 @@
     {
       "question": "What error is raised if method name resolution fails?",
       "correctAnswer": "NoMethodError",
-      "tags": ["Ruby"],
+      "tags": "Ruby",
       "wrongAnswer": [
         "YesMethodError",
         "MaybeMethodError"
@@ -163,7 +163,7 @@
     {
       "question": "What is the difference between \"puts\" and \"print\"?",
       "correctAnswer": "puts appends a newline character to the output",
-      "tags": ["Ruby"],
+      "tags": "Ruby",
       "wrongAnswer": [
         "puts is more efficient",
         "Ruby likes puts more than print"

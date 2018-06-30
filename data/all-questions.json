@@ -492,7 +492,7 @@
       "question": "True or false: You can only use text as links in HTML?",
       "correctAnswer": "False",
       "wrongAnswer":[
-        "True",
+        "True"
       ],
       "tags": "HTML"
     },
@@ -625,13 +625,10 @@
         "tags": "JavaScript",
         "wrongAnswer": []
     },
-    // thought the above question would be funny, we can get rid of it if it breaks anything lol
     {
         "question": "What do you call JavaScript without any additional frameworks or libraries?",
         "correctAnswer": "Vanilla",
-        "tags": [
-            "JavaScript",
-        ],
+        "tags": "JavaScript",
         "wrongAnswer": [
           "Plain JavaScript",
           "Chocolate JavaScript"
@@ -640,9 +637,7 @@
     {
         "question": "What does each JavaScript statement need to end with?",
         "correctAnswer": "semicolon",
-        "tags": [
-            "JavaScript",
-        ],
+        "tags": "JavaScript",
         "wrongAnswer": [
           "period",
           "question mark"
@@ -651,9 +646,7 @@
     {
         "question": "What is the most common case used in JavaScript?",
         "correctAnswer": "Lower Camel Case",
-        "tags": [
-            "JavaScript",
-        ],
+        "tags": "JavaScript",
         "wrongAnswer": [
           "Underscore",
           "Hyphens"
@@ -662,9 +655,7 @@
     {
         "question": "What data type do you get when you add a Number and String?",
         "correctAnswer": "String",
-        "tags": [
-            "JavaScript",
-        ],
+        "tags": "JavaScript",
         "wrongAnswer": [
           "Number",
           "Stringy Number"
@@ -673,9 +664,7 @@
     {
         "question": "Which of the following is not a valid data type?",
         "correctAnswer": "Array",
-        "tags": [
-            "JavaScript",
-        ],
+        "tags": "JavaScript",
         "wrongAnswer": [
           "Number",
           "String"
@@ -684,9 +673,7 @@
     {
         "question": "How many basic data types are there in JavaScript?",
         "correctAnswer": "7",
-        "tags": [
-            "JavaScript",
-        ],
+        "tags": "JavaScript",
         "wrongAnswer": [
           "5",
           "10"
@@ -695,9 +682,7 @@
     {
         "question": "What data type contains the values true and false?",
         "correctAnswer": "Boolean",
-        "tags": [
-            "JavaScript",
-        ],
+        "tags": "JavaScript",
         "wrongAnswer": [
           "Binary",
           "Flag"
@@ -706,9 +691,7 @@
     {
         "question": "What do you call a block of code designed to perform a particular task?",
         "correctAnswer": "Function",
-        "tags": [
-            "JavaScript",
-        ],
+        "tags": "JavaScript",
         "wrongAnswer": [
           "Program",
           "Method"
@@ -717,9 +700,7 @@
     {
         "question": "What does 'this' refer to in a function definition?",
         "correctAnswer": "The owner of the function",
-        "tags": [
-            "JavaScript",
-        ],
+        "tags": "JavaScript",
         "wrongAnswer": [
           "A confusing question",
           "Not 'that'"
