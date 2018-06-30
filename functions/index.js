@@ -2,10 +2,8 @@
 
 // Import Firebase-admin and initialize app.
 const admin = require('firebase-admin');
-// const { API_KEY } = require('../keys.js');
-// const keys = require('../keys');
+
 // Initialize Firebase
-// TODO: Replace with your project's customized code snippet
 const config = {
   apiKey: 'AIzaSyD7t2UELyolG2mRLVk1XvYoJi30TffOo8A',
   authDomain: "code-up-927cb.firebaseapp.com",
@@ -36,7 +34,6 @@ const app = dialogflow({ debug: true });
 // Handle the Dialogflow intent named 'Default Welcome Intent'.
 app.intent('Default Welcome Intent', (conv) => {
   conv.data.count = 0;
-  // let score = conv;
   conv.ask(new Permission({
     context: 'Hi there, to get to know you better',
     permissions: 'NAME',
@@ -46,7 +43,6 @@ app.intent('Default Welcome Intent', (conv) => {
 // Handle the Dialogflow intent named 'actions_intent_PERMISSION'. If user
 // agreed to PERMISSION prompt, then boolean value 'permissionGranted' is true.
 app.intent('actions_intent_PERMISSION', (conv, params, permissionGranted) => {
-  // conv.data.count += 1;
   if (!permissionGranted) {
     conv.ask(`Ok, no worries. What programming language would you like to learn?`);
   } else {
@@ -55,8 +51,6 @@ app.intent('actions_intent_PERMISSION', (conv, params, permissionGranted) => {
   }
 }); 
 
-// Handle the Dialogflow intent named 'favorite color'.
-// The intent collects a parameter named 'color'.
 app.intent('programming language', (conv, { programmingLanguage }) => {
   conv.data.count = 0;
   const getQuestions = rootRef.child('questions').orderByChild('tags').equalTo(programmingLanguage).once('value');
@@ -75,15 +69,6 @@ app.intent('programming language', (conv, { programmingLanguage }) => {
     return conv.ask(a_prompt);
   })
 });
-
-const shuffleArray = (array) => {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-  return array;
-}
-
 
 app.intent('programming language - answer1', (conv, { answer }) => {
   let answer_idx = ['a','b','c'].indexOf(answer);
@@ -214,6 +199,14 @@ app.intent('Answers Fallback', (conv) => {
     conv.ask(`Your answer might be right. Try choosing 'a', 'b', or 'c'.`)
   }
 })
+
+const shuffleArray = (array) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
 
 const answer_prompt = function(count, conv) {
   if ( count === 2 ) {
