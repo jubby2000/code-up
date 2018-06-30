@@ -14,23 +14,23 @@ The idea is that the app can be invoked via a hotword: "Okay Google, talk to Cod
 The app begins a conversation with the user, offering trivia questions related to the language of their choice.
 
 Users continue the conversation until they choose to stop -the app keeps track of scores throughout the conversation.
-![](./assets/readme-logos/hero-banner.png)
+![](https://github.com/jubby2000/code-up/blob/master/assets/readme-images/hero-banner.png)
 
 ## Technologies
 firebase
 nodejs
 dialogflow
 actions on google
-![Firebase](./assets/readme-logos/firebase.png)
+![Firebase](https://github.com/jubby2000/code-up/blob/master/assets/readme-images/firebase.png)
 For our Database we chose to use Google Firebase's Realtime Database Platform in order to integrate well with our other technologies (more on this later). Firebase handles asset, database, and function storage. !!!It stores the data in JSON format in its NoSQL database.!!!
 
-![NodeJs](./assets/readme-logos/nodejs.png)
+![NodeJs](https://github.com/jubby2000/code-up/blob/master/assets/readme-images/nodejs.png)
 We went with Node.js for the backend to handle User Intent requests, conversation logic and query the database.
 
-![DialogFlow](./assets/readme-logos/dialogflow.png)
+![DialogFlow](https://github.com/jubby2000/code-up/blob/master/assets/readme-images/dialogflow.png)
 DialogFlow bridges Actions on Google to Node.js, allowing us to utilize its Natural Language Understanding (NLU) SDK to parse user speech and text responses. It provides a console where conversation can be structured using Intents and Entities. An Intent represents a mapping between what user says and what action should be taken by your software. Entites are used to extract parameter values from natural language inputs. We can also train the AI on which user phrases to capture as entities.
 
-![Actions on Google](./assets/readme-logos/actions.png)
+![Actions on Google](https://github.com/jubby2000/code-up/blob/master/assets/readme-images/actions.png)
 Actions on Google is what allows us to use Google Assistant as our frontend. We used it as our entry point to create our app and send user input to our NLU SDK (DialogFlow).
 
 !!!SCROLLING GIF OF CODEUP DEMO SITE!!!
