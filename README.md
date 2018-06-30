@@ -1,181 +1,87 @@
-## Background and Overview
+## Table of Contents
+* [Introduction](#Introduction)
+* [Technologies](#Technologies)
+* [Technical Challenges](#Technical-Challenges)
+* [Database Schema](#Database-Schema)
+* [Future Improvements](#Future-Improvements)
+* [Contributors](#Contributors)
 
-CodeUp is a voice-assistant code training/trivia app. The idea is that the app can be invoked via hotword: "Okay Google, talk to CodeUp" or via deeplink: "Okay Google, talk to CodeUp about SQL." 
+## Introduction
 
-The app will be able to begin a conversation with the user, offering trivia questions related to that topic if invoked via audio, and text-based code challenges (or trivia) if invoked on a device with a screen.
+CodeUp is a Google Assistant Code Training and Trivia App. Users can learn about languages like Ruby, JavaScript, SQL, HTML and CSS.
+The idea is that the app can be invoked via a hotword: "Okay Google, talk to CodeUp" or via a deeplink: "Okay Google, talk to CodeUp about SQL".
 
-Users will be able to continue the conversation until they choose to stop, and the app will be able to keep track of scores throughout the conversation and (perhaps) across sessions.
+The app begins a conversation with the user, offering trivia questions related to the language of their choice.
 
-### Wireframes and mockups
-![Logos](https://github.com/jubby2000/code-up/blob/master/logo-mockups.png?raw=true)
-![Demo site](https://github.com/jubby2000/code-up/blob/master/codeup_wireframes.png?raw=true)
+Users continue the conversation until they choose to stop -the app keeps track of scores throughout the conversation.
+![](https://github.com/jubby2000/code-up/blob/master/assets/readme-images/hero-banner.png)
 
-## Functionality and MVP
+## Technologies
+firebase
+nodejs
+dialogflow
+actions on google
+![Firebase](https://github.com/jubby2000/code-up/blob/master/assets/readme-images/firebase.png)
+For our Database we chose to use Google Firebase's Realtime Database Platform in order to integrate well with our other technologies (more on this later). Firebase handles asset, database, and function storage. !!!It stores the data in JSON format in its NoSQL database.!!!
 
-* **Basic Startup**: Users can invoke and stop the app using custom hotword (“Okay Google, let me talk to CodeUp”, “stop”)
-    1. Done with Dialogflow GUI
-* **Trivia Initialization**: Users can choose a category and a desired number of questions.
-    1. Checks in frontend for availability of chosen category
-* **Basic trivia logic**: Looping through questions, presenting options for each question and responding to correct answers
-    1. POST request to backend and return response, correct answer checking done too
-* **Full functionality**: Keeping track of scores, multiple play-through, fallbacks and error-handling
-* **Demo site**: With demo of the app and other screenshots + information
+![NodeJs](https://github.com/jubby2000/code-up/blob/master/assets/readme-images/nodejs.png)
+We went with Node.js for the backend to handle User Intent requests, conversation logic and query the database.
+
+![DialogFlow](https://github.com/jubby2000/code-up/blob/master/assets/readme-images/dialogflow.png)
+DialogFlow bridges Actions on Google to Node.js, allowing us to utilize its Natural Language Understanding (NLU) SDK to parse user speech and text responses. It provides a console where conversation can be structured using Intents and Entities. An Intent represents a mapping between what user says and what action should be taken by your software. Entites are used to extract parameter values from natural language inputs. We can also train the AI on which user phrases to capture as entities.
+
+![Actions on Google](https://github.com/jubby2000/code-up/blob/master/assets/readme-images/actions.png)
+Actions on Google is what allows us to use Google Assistant as our frontend. We used it as our entry point to create our app and send user input to our NLU SDK (DialogFlow).
+
+!!!SCROLLING GIF OF CODEUP DEMO SITE!!!
+
+## Technical Challenges
+There were several main challenges that we encountered while building CodeUp:
+
+1. The core of our app relies on fluid conversation between the user and the app. Any slight discrepancies would result in a poor user experience, especially due to the medium of interaction. The challenge was to figure out a way to structure the conversation such that the app would function logically and the user would have an intuitive experience.
+
+When two people communicate, both parties are aware of the context which is being referenced. In our case, the user is aware of the context but CodeUp is not. This results in a problem where using CodeUp is not intuitive and feels mechanical. Our solution was to leverage the available contexts and intents of Google's DialogFlow to mimic a natural conversation between two humans.
 
 
-### Bonus
-* Alexa Skill
-* Live demo on demo site
-* Live stats on coding subjects
+2. Working in Google Firebase and Actions on Google, we were not able to debug in the traditional manner. This was due to the fact that DialogFlow is a console based service and does not output written code in their logs. To work around this, we made sure to code review multiple times before deploying and testing.
 
-## Technologies and Technical Challenges
 
-* Node.js backend to handle intent requests, conversation logic and retrieving database data.
-* Firebase will handle asset, database, and function storage.
-* Dialogflow on the "frontend" to train the AI on which user phrases to capture as variables
+3. Randomizing Question Sets and Shuffling Answer Choices
 
-### Key Challenges
-1. Seeding a large amount of data into the database (JSON format), in a way that can be retrieved appropriately
-2. Separating logic for if a user's device has a screen or if it's audio only and serving up appropriate content and conversation flow
-3. Reduce latency as low as possible to improve user experience
+In order for the experience to not seem repetitive or predictable, we needed to query the database in a way that would produce a random set of questions. This was a challenge because of our large data set and the fact that there are multiple subject tags to sort through. We overcame this challenge by querying the database for questions that belonged to a specific tag and then randomly selecting a set of five to deliver to the user.
 
-## Schema Considerations
-Easier to query, less variety in terms of incorrect answer options
+Because our database stores answers in a predefined order, it is not ideal for quizzing purposes. To solve this, we implemented a shuffle function to randomize the order in which the answer choices were displayed to the user.
+
+## Database Schema
+We stored our question and answer seed data in JSON Format in a NoSQL database hosted remotely on a cloud platform provided by Google Firebase.
 ```javascript
 {
-  "Questions": {
-    "Q1": "What are all the values that are considered falsey in JavaScript?"
-    }
-  "Answers": {
-    "A1": {
-       "body": "null and NaN",
-       "q_id": "Q1",
-       "answer_type": false
-      },
-    "A2": {
-       "body": "zeros, empty strings, undefined, null, and NaN",
-       "q_id": "Q1",
-       "answer_type": true
-      },
-    "A3": {
-       "body": "zeros, ones, empty strings, undefined, null, and NaN",
-       "q_id": "Q1",
-       "answer_type": false
-      }
-    },
-  "Tags": {
-    "T1": "JavaScript",
-    "T2": "Ruby",
-    "T3": "React",
-    "T4": "Ruby on Rails",
-    "T5": "Data Types",
-    "T6": "Variables"
-    },
-  "Question_taggings": {
-    "Q1": {
-      "T1": "JavaScript",
-      "T5": "Data Types"
-     },
-    "Q2": {
-      "T1": "JavaScript",
-      "T6": "Variables"
-     }
-    },
-  "Answer_taggings": {
-    "A1": {
-      "T1": "JavaScript",
-      "T5": "Data Types"
-     },
-    "A2": {
-      "T1": "JavaScript",
-      "T5": "Data Types"
-      },
-    "A3": {
-      "T1": "JavaScript",
-      "T5": "Data Types"
-      }
-    }
-  }
+    "questions": [
+        {
+            "question": "Which of the following is not a valid data type?",
+            "correctAnswer": "Array",
+            "tags": "JavaScript",
+            "wrongAnswer": [ "Number", "String" ]
+        },
+        {
+            "question": "How many basic data types are there in JavaScript?",
+            "correctAnswer": "7",
+            "tags": "JavaScript",
+            "wrongAnswer": [ "5", "10" ]
+        }
+    ]
+}
 ```
 
-More variety, and also more required up front in terms of questions and answer design:
-```javascript
-{
-  "Questions": {
-    "Q1": {
-      "body": "What are all the values that are considered falsey in JavaScript?",
-      "correct_answer_id": "A2"
-      },
-    "Q2": {
-      "body": "How do we declare a constant 'favFood' using ES6+ syntax?",
-      "correct_answer_id": "A6"
-      }
-    }
-  "Answers": {
-    "A1": "body": "null and NaN",
-    "A2": "body": "zeros, empty strings, undefined, null, and NaN",
-    "A3": "body": "zeros, ones, empty strings, undefined, null, and NaN",
-    "A4": "body": "var favFood = 'pizza';",
-    "A5": "body": "let favFood = 'pizza';",
-    "A6": "body": "const favFood = 'pizza';"
-    },
-  "Tags": {
-    "T1": "JavaScript",
-    "T2": "Ruby",
-    "T3": "React",
-    "T4": "Ruby on Rails",
-    "T5": "Data Types",
-    "T6": "Variables"
-    },
-  "Question_taggings": {
-    "Q1": {
-      "T1": "JavaScript",
-      "T5": "Data Types"
-     },
-    "Q2": {
-      "T1": "JavaScript",
-      "T6": "Variables"
-     }
-    },
-  "Answer_taggings": {
-    "A1": {
-      "T1": "JavaScript",
-      "T5": "Data Types"
-     },
-    "A2": {
-      "T1": "JavaScript",
-      "T5": "Data Types"
-      },
-    "A3": {
-      "T1": "JavaScript",
-      "T5": "Data Types"
-      },
-    "A4": {
-      "T1": "JavaScript",
-      "T5": "Variables"
-      },
-    "A5": {
-      "T1": "JavaScript",
-      "T5": "Variables"
-      },
-    "A6": {
-      "T1": "JavaScript",
-      "T5": "Variables"
-      }
-    }
-  }
-```
+## Contributors
+* [Farah Quader](https://www.github.com/FarahYQ)
+* [Jacob Barlow](https://www.github.com/jubby2000)
+* [Ken Chan](https://www.github.com/kchansf5)
+* [Shashank Racherla](https://www.github.com/srac1777)
 
-## Things Accomplished Over the Weekend
-* Research MERN stack, and decide against it in favor of Node.js and Firebase for compatibility
-* Build sample projects (Actions on Google) to get an idea of where we need to diverge
-* Begin building conversation logic
 
-## Group Members and Work Breakdown
-**Farah Quader, Jacob Barlow, Ken Chan, Shashank Racherla**
-* W11D1 - Finalize Firebase storage schema, tie into Node **Farah, Jacob**
-* W11D2 - Build seed slices **All**
-* W11D3 - Build seed slices **All**
-* W11D4 - Build seed slices **All**
-* W11D5 - Build seed slices **All**
-* W11D6 - Build demo site **Ken, Shasha**
-* W11D7 - Build demo site **Ken, Shasha**
+### Future Improvements
+We plan on improving CodeUp with the following features in the future:
+* Make it available on Amazon Products as an Alexa Skill
+* Allow Users to create profiles and view their quiz history and stats
+* Expand on the languages available for training

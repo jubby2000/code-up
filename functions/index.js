@@ -2,7 +2,8 @@
 
 // Import Firebase-admin and initialize app.
 const admin = require('firebase-admin');
-
+// const { API_KEY } = require('../keys.js');
+// const keys = require('../keys');
 // Initialize Firebase
 // TODO: Replace with your project's customized code snippet
 const config = {
@@ -19,7 +20,7 @@ const rootRef = admin.database().ref();
 const successSound = 'https://actions.google.com/sounds/v1/crowds/battle_crowd_celebrate_stutter.ogg';
 const failSound = 'https://actions.google.com/sounds/v1/cartoon/cartoon_boing.ogg';
 const calculateSound = 'https://actions.google.com/sounds/v1/office/keyboard_typing_fast.ogg';
-const gameOverSound = 'https://actions.google.com/sounds/v1/cartoon/cartoon_metal_thunk.ogg'; 
+const gameOverSound = 'https://actions.google.com/sounds/v1/cartoon/cartoon_metal_thunk.ogg';
 
 const {
   dialogflow,
@@ -35,7 +36,7 @@ const app = dialogflow({ debug: true });
 // Handle the Dialogflow intent named 'Default Welcome Intent'.
 app.intent('Default Welcome Intent', (conv) => {
   conv.data.count = 0;
-  let score = conv;
+  // let score = conv;
   conv.ask(new Permission({
     context: 'Hi there, to get to know you better',
     permissions: 'NAME',
@@ -52,29 +53,39 @@ app.intent('actions_intent_PERMISSION', (conv, params, permissionGranted) => {
     conv.data.userName = conv.user.name.given;
     conv.ask(`Thanks, ${conv.data.userName}. What programming language would you like to learn?`);
   }
-});
+}); 
 
 // Handle the Dialogflow intent named 'favorite color'.
 // The intent collects a parameter named 'color'.
 app.intent('programming language', (conv, { programmingLanguage }) => {
   conv.data.count = 0;
+  const getQuestions = rootRef.child('questions').orderByChild('tags').equalTo(programmingLanguage).limitToFirst(5).once('value');
   return getQuestions.then(snapshot => {
-    console.log(snapshot.val());
-    let question_set = Object.keys(snapshot.val()).map(e => snapshot.val()[e]);
-    conv.data.questions = question_set;
-    conv.data.answer = question_set[0].correctAnswer;
-    let answers = question_set[0].wrongAnswer.concat([conv.data.answer]);
-    conv.ask(`Got it, ${programmingLanguage}. Let's do it. ${ question_set[0].question }`);
-    return conv.ask(`Is it\n` +
-                    `a. ${answers[0]}?\n` +
-                    `b. ${answers[1]}? or\n` +
-                    `c. ${answers[2]}?`);
-    // return conv.ask();
+    conv.data.questions = Object.keys(snapshot.val()).map( function(key) {
+      return snapshot.val()[key]
+    });
+    conv.data.answer = conv.data.questions[0].correctAnswer;
+
+    // Create randomly ordered answers array based on total # of answers
+    let answers_count  = conv.data.questions[0].wrongAnswer.length + 1;
+    let rand_idx = Math.floor(Math.random()*answers_count);
+    let answers = conv.data.questions[0].wrongAnswer;
+    answers.splice(rand_idx, 0, conv.data.answer);
+    conv.data.answers = answers;
+    // Create prompt for answers
+    let a_prompt = answer_prompt(answers_count, conv);
+    
+    conv.ask(`Got it, ${programmingLanguage}. Let's do it. ${ conv.data.questions[0].question }`);
+    return conv.ask(a_prompt);
   })
 });
 
 app.intent('programming language - answer1', (conv, { answer }) => {
-  if (answer === 'c') {
+
+  let answer_idx = ['a','b','c'].indexOf(answer);
+  let correct_answer_idx = conv.data.answers.indexOf(conv.data.answer);
+
+  if (answer_idx === correct_answer_idx) {
     conv.data.count += 1;
     conv.ask(`<speak><audio src="${successSound}" clipEnd="2.0s" fadeOutDur="3.0s">` +
     `</audio><break time="200ms"/>Wow, first try! Nice job. Next question: ${conv.data.questions[1].question}</speak>`);
@@ -83,16 +94,28 @@ app.intent('programming language - answer1', (conv, { answer }) => {
     `Sorry, the answer was ${conv.data.answer}. ` +
     `Next question: ${conv.data.questions[1].question}</speak>`);
   }
+
   conv.data.answer = conv.data.questions[1].correctAnswer;
-  let answers = conv.data.questions[1].wrongAnswer.concat([conv.data.answer]);
-  conv.ask(`Is it\n` +
-    `a. ${answers[0]}?\n` +
-    `b. ${answers[1]}? or\n` +
-    `c. ${answers[2]}?`);
+  
+  // Create randomly ordered answers array based on total # of answers
+  let answers_count  = conv.data.questions[1].wrongAnswer.length + 1;
+  let rand_idx = Math.floor(Math.random()*answers_count);
+  let answers = conv.data.questions[1].wrongAnswer;
+  answers.splice(rand_idx, 0, conv.data.answer);
+  conv.data.answers = answers;
+
+  // Create prompt for answers
+  let a_prompt = answer_prompt(answers_count, conv);
+
+  conv.ask(a_prompt);
 });
 
 app.intent('programming language - answer2', (conv, { answer }) => {
-  if (answer === 'c') {
+  console.log("THE SECOND ANSWER");
+  let answer_idx = ['a','b','c'].indexOf(answer);
+  let correct_answer_idx = conv.data.answers.indexOf(conv.data.answer);
+
+  if (answer_idx === correct_answer_idx) {
     conv.data.count += 1;
     conv.ask(`<speak><audio src="${successSound}" clipEnd="2.0s" fadeOutDur="3.0s"></audio>` +
     `<break time="200ms"/>You got it! Here's your next one: ${conv.data.questions[2].question}</speak>`);
@@ -102,15 +125,25 @@ app.intent('programming language - answer2', (conv, { answer }) => {
     `Here's your next one: ${conv.data.questions[2].question}</speak>`);
   }
   conv.data.answer = conv.data.questions[2].correctAnswer;
-  let answers = conv.data.questions[2].wrongAnswer.concat([conv.data.answer]);
-  conv.ask(`Is it\n` +
-    `a. ${answers[0]}?\n` +
-    `b. ${answers[1]}? or\n` +
-    `c. ${answers[2]}?`);
+
+  // Create randomly ordered answers array based on total # of answers
+  let answers_count  = conv.data.questions[2].wrongAnswer.length + 1;
+  let rand_idx = Math.floor(Math.random()*answers_count);
+  let answers = conv.data.questions[2].wrongAnswer;
+  answers.splice(rand_idx, 0, conv.data.answer);
+  conv.data.answers = answers;
+
+  // Create prompt for answers
+  let a_prompt = answer_prompt(answers_count, conv);
+  
+  conv.ask(a_prompt);
 });
 
 app.intent('programming language - answer3', (conv, { answer }) => {
-  if (answer === 'c') {
+  let answer_idx = ['a','b','c'].indexOf(answer);
+  let correct_answer_idx = conv.data.answers.indexOf(conv.data.answer);
+
+  if (answer_idx === correct_answer_idx) {
     conv.data.count += 1;
     conv.ask(`<speak><audio src="${successSound}" clipEnd="2.0s" fadeOutDur="3.0s"></audio>` +
     `<break time="200ms"/>You got it! Here's your next one: ${conv.data.questions[3].question}</speak>`);
@@ -120,15 +153,25 @@ app.intent('programming language - answer3', (conv, { answer }) => {
     `Here's your next one: ${conv.data.questions[3].question}</speak>`);
   }
   conv.data.answer = conv.data.questions[3].correctAnswer;
-  let answers = conv.data.questions[3].wrongAnswer.concat([conv.data.answer]);
-  conv.ask(`Is it\n` +
-    `a. ${answers[0]}?\n` +
-    `b. ${answers[1]}? or\n` +
-    `c. ${answers[2]}?`);
+
+  // Create randomly ordered answers array based on total # of answers
+  let answers_count  = conv.data.questions[3].wrongAnswer.length + 1;
+  let rand_idx = Math.floor(Math.random()*answers_count);
+  let answers = conv.data.questions[3].wrongAnswer;
+  answers.splice(rand_idx, 0, conv.data.answer);
+  conv.data.answers = answers;
+
+  // Create prompt for answers
+  let a_prompt = answer_prompt(answers_count, conv);
+
+  conv.ask(a_prompt);
 });
 
 app.intent('programming language - answer4', (conv, { answer }) => {
-  if (answer === 'c') {
+  let answer_idx = ['a','b','c'].indexOf(answer);
+  let correct_answer_idx = conv.data.answers.indexOf(conv.data.answer);
+
+  if (answer_idx === correct_answer_idx) {
     conv.data.count += 1;
     conv.ask(`<speak><audio src="${successSound}" clipEnd="2.0s" fadeOutDur="3.0s"></audio>` +
     `<break time="200ms"/>You got it! Alright, final question: ${conv.data.questions[4].question}</speak>`);
@@ -138,15 +181,25 @@ app.intent('programming language - answer4', (conv, { answer }) => {
     `Alright, final question: ${conv.data.questions[4].question}</speak>`);
   }
   conv.data.answer = conv.data.questions[4].correctAnswer;
-  let answers = conv.data.questions[4].wrongAnswer.concat([conv.data.answer]);
-  conv.ask(`Is it\n` +
-    `a. ${answers[0]}?\n` +
-    `b. ${answers[1]}? or\n` +
-    `c. ${answers[2]}?`);
+
+  // Create randomly ordered answers array based on total # of answers
+  let answers_count  = conv.data.questions[4].wrongAnswer.length + 1;
+  let rand_idx = Math.floor(Math.random()*answers_count);
+  let answers = conv.data.questions[4].wrongAnswer;
+  answers.splice(rand_idx, 0, conv.data.answer);
+  conv.data.answers = answers;
+
+  // Create prompt for answers
+  let a_prompt = answer_prompt(answers_count, conv);
+
+  conv.ask(a_prompt);
 });
 
 app.intent('programming language - answer5', (conv, { answer }) => {
-  if (answer === 'c') {
+  let answer_idx = ['a','b','c'].indexOf(answer);
+  let correct_answer_idx = conv.data.answers.indexOf(conv.data.answer);
+
+  if (answer_idx === correct_answer_idx) {
     conv.data.count += 1;
     conv.ask(`<speak><audio src="${successSound}" clipEnd="2.0s" fadeOutDur="3.0s">` +
     `</audio><break time="200ms"/>You got it!<break time="100ms"/>` +
@@ -160,6 +213,14 @@ app.intent('programming language - answer5', (conv, { answer }) => {
   conv.ask(`<speak><audio src="${calculateSound}" soundLevel="+30dB" fadeOutDur="2.0s" clipEnd="2.0s"></audio>` +
   `<break time="500ms"/>You got ${conv.data.count} right! Would you like to go again?</speak>`);
 });
+
+app.intent('Answers Fallback', (conv) => {
+  if (conv.data.answers.length === 2) {
+    conv.ask(`Your answer might be right. Try choosing 'a' or 'b'.`)
+  } else {
+    conv.ask(`Your answer might be right. Try choosing 'a', 'b', or 'c'.`)
+  }
+})
 
 
 // app.intent('programming language - select.number', (conv, { language, number }) => {
@@ -192,11 +253,21 @@ app.intent('programming language - answer5', (conv, { answer }) => {
 //   })
 // });
 
+const answer_prompt = function(count, conv) {
+  if ( count === 2 ) {
+    return `Is it\n` +
+    `a. ${conv.data.answers[0]}? or\n` +
+    `b. ${conv.data.answers[1]}?`;
+  } else {
+    return `Is it\n` +
+    `a. ${conv.data.answers[0]}?\n` +
+    `b. ${conv.data.answers[1]}? or\n` +
+    `c. ${conv.data.answers[2]}?`;
+  }
+}
 
 
-
-
-const getQuestions = rootRef.child('questions').orderByChild('tags').limitToFirst(5).once('value');
+// const getQuestions = rootRef.child('questions').orderByChild('tags').equalTo('Ruby').limitToFirst(5).once('value');
 // app.intent('programming language - select.number', (conv, { language, number }) => {
 //   conv.close(`Got it, ${language} and ${number} questions. Let's do it.`);
 // });
