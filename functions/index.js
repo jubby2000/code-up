@@ -97,15 +97,15 @@ app.intent('programming language - answer1', (conv, { answer }) => {
 
   conv.data.answer = conv.data.questions[1].correctAnswer;
   
-    // Create randomly ordered answers array based on total # of answers
-    let answers_count  = conv.data.questions[1].wrongAnswer.length + 1;
-    let rand_idx = Math.floor(Math.random()*answers_count);
-    let answers = conv.data.questions[1].wrongAnswer;
-    answers.splice(rand_idx, 0, conv.data.answer);
-    conv.data.answers = answers;
+  // Create randomly ordered answers array based on total # of answers
+  let answers_count  = conv.data.questions[1].wrongAnswer.length + 1;
+  let rand_idx = Math.floor(Math.random()*answers_count);
+  let answers = conv.data.questions[1].wrongAnswer;
+  answers.splice(rand_idx, 0, conv.data.answer);
+  conv.data.answers = answers;
 
-    // Create prompt for answers
-    let a_prompt = answer_prompt(answers_count, conv);
+  // Create prompt for answers
+  let a_prompt = answer_prompt(answers_count, conv);
 
   conv.ask(a_prompt);
 });
@@ -203,6 +203,14 @@ app.intent('programming language - answer5', (conv, { answer }) => {
   conv.ask(`<speak><audio src="${calculateSound}" clipEnd="2.0s"></audio>` +
   `You got ${conv.data.count} right! Would you like to go again?</speak>`);
 });
+
+app.intent('Answers Fallback', (conv) => {
+  if (conv.data.answers.length === 2) {
+    conv.ask(`Your answer might be right. Try choosing 'a' or 'b'.`)
+  } else {
+    conv.ask(`Your answer might be right. Try choosing 'a', 'b', or 'c'.`)
+  }
+})
 
 
 // app.intent('programming language - select.number', (conv, { language, number }) => {
