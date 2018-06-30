@@ -40,64 +40,17 @@ There were several main challenges that we encountered while building CodeUp:
 
 1. The core of our app relies on fluid conversation between the user and the app. Any slight discrepancies would result in a poor user experience, especially due to the medium of interaction. The challenge was to figure out a way to structure the conversation such that the app would function logically and the user would have an intuitive experience.
 
-Our solution was to leverage the available contexts and intents of Google's DialogFlow to mimic a natural conversation between two humans.
+When two people communicate, both parties are aware of the context which is being referenced. In our case, the user is aware of the context but CodeUp is not. This results in a problem where using CodeUp is not intuitive and feels mechanical. Our solution was to leverage the available contexts and intents of Google's DialogFlow to mimic a natural conversation between two humans.
 
 
-contexts
-when a person says something to another person, both of them are aware of the context which is being referenced
-in our case, the user is aware of the context, buy DF needs the context to be explicitly defined for it to understand
-
-intents
-whenever a user says something, they say it with a certain intent. we capture that intent using the DF intent feature. and extract important variables as entities.  
-
-build something that resembles a normal conversation with context and intents
-
-context
-Intent
-how the context and intent are interpreted by the app
-basically trying to think like a computer in a way that would make it seem human to humans
-
-sub topic - handling unexpected user responses
-
-Seeding a large amount of data into the database (JSON format), in a way that can be retrieved appropriately
-
-
-
-2. Cannot debug easily having an audio only interface. To make the most of our  bad situation, we made to code review multiple times before deploying and testing. Although this is not a challenge that could be overcome, we took measures which involved continuous deployments and manual testing in order to ensure
-
-because we didn't have code to look at for the front end, we ended up deploying continuously
-dialogflow does not show raw code to debug
-
-we came up with a phases of when we should deploy and test. this was pretty much an organized way to test and not waste time hitting bugs when we weren't ready to test  
-
-
-e testing process as fluid and straightforward as possible.
-
-
-
-
+2. Working in Google Firebase and Actions on Google, we were not able to debug in the traditional manner. This was due to the fact that DialogFlow is a console based service and does not output written code in their logs. To work around this, we made sure to code review multiple times before deploying and testing.
 
 
 3. Randomizing Question Sets and Shuffling Answer Choices
 
-In order for the experience to not seem repetitive or predictable, we needed to query the database in a way that would produce a random set of questions. This was a challenge because we
+In order for the experience to not seem repetitive or predictable, we needed to query the database in a way that would produce a random set of questions. This was a challenge because of our large data set and the fact that there are multiple subject tags to sort through. We overcame this challenge by querying the database for questions that belonged to a specific tag and then randomly selecting a set of five to deliver to the user.
 
-
-
-Out of our large data set of questions we had to select five questions that belonged to the same category.
-
-because our DB stores answers in a predefined order, and we are doing a trivia app, it would defeat the purpose of quizzing the user if the correct answer is at a fixed position.
-
-to solve this, we implemented a shuffle function to randomize the order in which the answer choices were displayed to the user.
-
-we also
-
-
-
-
-
-
-
+Because our database stores answers in a predefined order, it is not ideal for quizzing purposes. To solve this, we implemented a shuffle function to randomize the order in which the answer choices were displayed to the user.
 
 ## Database Schema
 We stored our question and answer seed data in JSON Format in a NoSQL database hosted remotely on a cloud platform provided by Google Firebase.
