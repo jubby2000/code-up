@@ -11,18 +11,10 @@
 CodeUp is a Google Assistant Code Training and Trivia App. Users can learn about languages like Ruby, JavaScript, SQL, HTML and CSS.
 The idea is that the app can be invoked via a hotword: "Okay Google, talk to CodeUp" or via a deeplink: "Okay Google, talk to CodeUp about SQL". The app begins a conversation with the user, offering trivia questions related to the language of their choice. Users continue the conversation until they choose to stop - the app keeps track of the number of correctly answered questions throughout the conversation.
 
-<<<<<<< HEAD
-The app begins a conversation with the user, offering trivia questions related to the language of their choice. Users continue the conversation until they choose to stop - the app keeps track of the total number of correct answers throughout the conversation.
-
 ![](https://github.com/jubby2000/code-up/blob/master/assets/readme-images/hero-banner.png)
 
 ## Technologies
 
-=======
-![](https://github.com/jubby2000/code-up/blob/master/assets/readme-images/hero-banner.png)
-
-## Technologies
->>>>>>> ken
 ![Firebase](https://github.com/jubby2000/code-up/blob/master/assets/readme-images/firebase.png)
 For our Database we chose to use Google Firebase's Realtime Database Platform in order to integrate well with our other technologies (more on this later). Firebase handles asset, database, and function storage.
 
@@ -40,27 +32,15 @@ There were several main challenges that we encountered while building CodeUp:
 
 1. The core of our app relies on fluid conversation between the user and the app. Any slight discrepancies would result in a poor user experience, especially due to the medium of interaction. The challenge was to figure out a way to structure the conversation such that the app would function logically and the user would have an intuitive experience.
 
-<<<<<<< HEAD
-  When two people communicate, both parties are aware of the context which is being referenced. In our case, the user is aware of the context but CodeUp is not. This results in a problem where using CodeUp is not intuitive and feels mechanical. Our solution was to leverage the available contexts and intents of Google's DialogFlow to mimic a natural conversation between two humans.
-=======
-    When two people communicate, both parties are aware of the context which is being referenced. In our case, the user is    aware of the context but CodeUp is not. This results in a problem where using CodeUp is not intuitive and feels mechanical. Our solution was to leverage the available contexts and intents of Google's DialogFlow to mimic a natural conversation between two humans.
->>>>>>> ken
-
+    When two people communicate, both parties are aware of the context which is being referenced. In our case, the user is aware of the context but CodeUp is not. This results in a problem where using CodeUp is not intuitive and feels mechanical. Our solution was to leverage the available contexts and intents of Google's DialogFlow to mimic a natural conversation between two humans.
 
 2. Working in Google Firebase and Actions on Google, we were not able to debug in the traditional manner. This was due to the fact that DialogFlow is a console based service and does not output written code in their logs. To work around this, we made sure to code review multiple times before deploying and testing.
 
-
 3. Randomizing Question Sets and Shuffling Answer Choices
 
-<<<<<<< HEAD
-  In order for the experience to not seem repetitive or predictable, we needed to query the database in a way that would produce a random set of questions. This was a challenge because of our large data set and the fact that there are multiple subject tags to sort through. We overcame this challenge by querying the database for questions that belonged to a specific tag and then randomly selecting a set of five to deliver to the user.
-
-  Because our database stores answers in a predefined order, it is not ideal for quizzing purposes. To solve this, we implemented a shuffle function to randomize the order in which the answer choices were displayed to the user.
-=======
     In order for the experience to not seem repetitive or predictable, we needed to query the database in a way that would produce a random set of questions. This was a challenge because of our large data set and the fact that there are multiple subject tags to sort through. We overcame this challenge by querying the database for questions that belonged to a specific tag and then randomly selecting a set of five to deliver to the user.
 
     Because our database stores answers in a predefined order, it is not ideal for quizzing purposes. To solve this, we implemented a shuffle function to randomize the order in which the answer choices were displayed to the user.
->>>>>>> ken
 
 ## Database Schema
 We stored our question and answer seed data in JSON Format in a NoSQL database hosted remotely on a cloud platform provided by Google Firebase.
