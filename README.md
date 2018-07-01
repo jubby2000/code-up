@@ -26,8 +26,6 @@ DialogFlow bridges Actions on Google to Node.js, allowing us to utilize its Natu
 ![Actions on Google](https://github.com/jubby2000/code-up/blob/master/assets/readme-images/actions.png)
 Actions on Google is what allows us to use Google Assistant as our frontend. We used it as our entry point to create our app and send user input to our NLU SDK (DialogFlow).
 
-!!!SCROLLING GIF OF CODEUP DEMO SITE!!!
-
 ## Technical Challenges
 There were several main challenges that we encountered while building CodeUp:
 
