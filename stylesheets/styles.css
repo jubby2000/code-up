@@ -260,7 +260,7 @@ body {
   box-shadow: 0px 0px 14px 0px #878787; }
 
 .phone-container {
-  width: 300px;
+  width: 450px;
   height: 610px;
   position: relative; }
 
@@ -282,7 +282,7 @@ body {
   background-image: url("../assets/phone.png");
   background-repeat: no-repeat;
   background-size: 100%;
-  width: 300px;
+  width: 450px;
   height: 610px; }
 
 .footer {
@@ -318,6 +318,9 @@ body {
   margin-bottom: 30px; }
   .person .person-name {
     font-size: 24px;
+    font-family: myFont; }
+  .person .person-last-name {
+    font-size: 12px;
     font-family: myFont; }
 
 .person-image1 {
