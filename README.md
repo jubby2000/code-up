@@ -1,10 +1,10 @@
 ## Table of Contents
-* [Introduction](#Introduction)
-* [Technologies](#Technologies)
-* [Technical Challenges](#Technical-Challenges)
-* [Database Schema](#Database-Schema)
-* [Future Improvements](#Future-Improvements)
-* [Contributors](#Contributors)
+* [Introduction](#introduction)
+* [Technologies](#technologies)
+* [Technical Challenges](#technical-challenges)
+* [Database Schema](#database-schema)
+* [Future Improvements](#future-improvements)
+* [Contributors](#contributors)
 
 ## Introduction
 
