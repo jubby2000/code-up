@@ -11,16 +11,12 @@
 CodeUp is a Google Assistant Code Training and Trivia App. Users can learn about languages like Ruby, JavaScript, SQL, HTML and CSS.
 The idea is that the app can be invoked via a hotword: "Okay Google, talk to CodeUp" or via a deeplink: "Okay Google, talk to CodeUp about SQL".
 
-The app begins a conversation with the user, offering trivia questions related to the language of their choice.
+The app begins a conversation with the user, offering trivia questions related to the language of their choice. Users continue the conversation until they choose to stop - the app keeps track of the total number of correct answers throughout the conversation.
 
-Users continue the conversation until they choose to stop -the app keeps track of scores throughout the conversation.
 ![](https://github.com/jubby2000/code-up/blob/master/assets/readme-images/hero-banner.png)
 
 ## Technologies
-firebase
-nodejs
-dialogflow
-actions on google
+
 ![Firebase](https://github.com/jubby2000/code-up/blob/master/assets/readme-images/firebase.png)
 For our Database we chose to use Google Firebase's Realtime Database Platform in order to integrate well with our other technologies (more on this later). Firebase handles asset, database, and function storage. !!!It stores the data in JSON format in its NoSQL database.!!!
 
