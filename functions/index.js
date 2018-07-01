@@ -19,6 +19,13 @@ const successSound = 'https://actions.google.com/sounds/v1/crowds/battle_crowd_c
 const failSound = 'https://actions.google.com/sounds/v1/cartoon/cartoon_boing.ogg';
 const calculateSound = 'https://actions.google.com/sounds/v1/office/keyboard_typing_fast.ogg';
 const gameOverSound = 'https://actions.google.com/sounds/v1/cartoon/cartoon_metal_thunk.ogg';
+const answersFallbacks = [
+  'Answers Fallback', 
+  'Answer 2 Fallback', 
+  'Answer 3 Fallback', 
+  'Answer 4 Fallback', 
+  'Answer 5 Fallback'
+];
 
 const {
   dialogflow,
@@ -192,13 +199,15 @@ app.intent('programming language - answer5', (conv, { answer }) => {
   conv.ask(`<speak>You got ${conv.data.count} right! Would you like to go again?</speak>`);
 });
 
-app.intent('Answers Fallback', (conv) => {
-  if (conv.data.answers.length === 2) {
-    conv.ask(`Your answer might be right. Try choosing 'a' or 'b'.`)
-  } else {
-    conv.ask(`Your answer might be right. Try choosing 'a', 'b', or 'c'.`)
-  }
-})
+answersFallbacks.forEach(fallback => {
+  app.intent(`${fallback}`, (conv) => {
+    if (conv.data.answers.length === 2) {
+      conv.ask(`Your answer might be right. Try choosing 'a' or 'b'.`);
+    } else {
+      conv.ask(`Your answer might be right. Try choosing 'a', 'b', or 'c'.`);
+    }
+  })
+});
 
 const shuffleArray = (array) => {
   for (let i = array.length - 1; i > 0; i--) {
