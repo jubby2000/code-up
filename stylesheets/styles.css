@@ -279,11 +279,21 @@ body {
   z-index: 2; }
 
 .phone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-image: url("../assets/phone.png");
   background-repeat: no-repeat;
   background-size: 100%;
   width: 450px;
   height: 610px; }
+
+img {
+  position: relative;
+  top: -14px;
+  display: block;
+  width: 260px;
+  z-index: 0; }
 
 .footer {
   width: 75vw;

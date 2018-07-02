@@ -1,19 +1,19 @@
 .phone-demo-card {
-    width: 75vw;
-    // border: 1px solid red;
-    border-radius: 7px;
-    padding: 30px 0 30px 0;
-    display: flex;
-    justify-content: center;
-    // height: 300px;
-    background: white;
-     -webkit-box-shadow: 0px 0px 14px 0px rgba(135,135,135,1);
--moz-box-shadow: 0px 0px 14px 0px rgba(135,135,135,1);
-box-shadow: 0px 0px 14px 0px rgba(135,135,135,1);
+  width: 75vw;
+  // border: 1px solid red;
+  border-radius: 7px;
+  padding: 30px 0 30px 0;
+  display: flex;
+  justify-content: center;
+  // height: 300px;
+  background: white;
+   -webkit-box-shadow: 0px 0px 14px 0px rgba(135,135,135,1);
+  -moz-box-shadow: 0px 0px 14px 0px rgba(135,135,135,1);
+  box-shadow: 0px 0px 14px 0px rgba(135,135,135,1);
 }
 
 .phone-container {
-    width: 450px;
+  width: 450px;
   height: 610px;
   position: relative;
 }
@@ -28,18 +28,27 @@ box-shadow: 0px 0px 14px 0px rgba(135,135,135,1);
 }
 
 .pd {
-    position: absolute;
-    left: 17px;
-    top: 62.5px;
-    z-index: 2;
+  position: absolute;
+  left: 17px;
+  top: 62.5px;
+  z-index: 2;
 }
 
 .phone {
-    background-image: url('../assets/phone.png');
-    background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../assets/phone.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 450px;
+  height: 610px;
+}
 
-    background-size: 100%;
-    width: 450px;
-    height: 610px;
-
+img {
+    position: relative;
+    top: -14px;
+    display: block;
+    width: 260px;
+    z-index: 0;
 }
