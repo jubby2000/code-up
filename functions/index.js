@@ -39,24 +39,28 @@ const functions = require('firebase-functions');
 // Instantiate the Dialogflow client.
 const app = dialogflow({ debug: true });
 // Handle the Dialogflow intent named 'Default Welcome Intent'.
-app.intent('Default Welcome Intent', (conv) => {
-  conv.data.count = 0;
-  conv.ask(new Permission({
-    context: 'Hi there, to get to know you better',
-    permissions: 'NAME',
-  }));
-});
+// app.intent('Default Welcome Intent', (conv) => {
+//   conv.data.count = 0;
+//   conv.ask(new Permission({
+//     context: 'Hi there, to get to know you better',
+//     permissions: 'NAME',
+//   }));
+// });
 
 // Handle the Dialogflow intent named 'actions_intent_PERMISSION'. If user
 // agreed to PERMISSION prompt, then boolean value 'permissionGranted' is true.
-app.intent('actions_intent_PERMISSION', (conv, params, permissionGranted) => {
-  if (!permissionGranted) {
-    conv.ask(`Ok, no worries. What programming language would you like to learn?`);
-  } else {
-    conv.data.userName = conv.user.name.given;
-    conv.ask(`Thanks, ${conv.data.userName}. What programming language would you like to learn?`);
-  }
-}); 
+// app.intent('actions_intent_PERMISSION', (conv, params, permissionGranted) => {
+//   if (!permissionGranted) {
+//     conv.ask(`Ok, no worries. What programming language would you like to learn?`);
+//   } else {
+//     conv.data.userName = conv.user.name.given;
+//     conv.ask(`Thanks, ${conv.data.userName}. What programming language would you like to learn?`);
+//   }
+// }); 
+
+app.intent('Default Welcome Intent', (conv) => {
+  conv.ask(`<speak>Welcome to CodeUp Trivia! What programming language would you like to learn?</speak>`);
+})
 
 app.intent('programming language', (conv, { programmingLanguage }) => {
   conv.data.count = 0;
